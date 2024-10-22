@@ -34,6 +34,7 @@ let package = Package(
             path: "ProgressHUD/Sources",
             resources: [
                 .process("PrivacyInfo.xcprivacy"),
+                .process("superAnimation.json")
             ]
         ),
     ]

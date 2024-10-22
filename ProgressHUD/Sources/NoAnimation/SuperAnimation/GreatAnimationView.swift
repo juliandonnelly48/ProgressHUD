@@ -50,15 +50,22 @@ class GreatAnimationView: UIView, InstanceFromNibProtocol {
                 UIColor().hexStringToUIColor(hex: "#F86C1E")
             ]
         )
+
+        lottieAnimationView.animation = LottieAnimation.named("superAnimation")
+        lottieAnimationView.loopMode = .autoReverse
+        lottieAnimationView.contentMode = .scaleAspectFill
+        lottieAnimationView.backgroundBehavior = .pauseAndRestore
+        lottieAnimationView.backgroundColor = .clear
+        lottieAnimationView.play()
         
-        LottieAnimation.loadedFrom(url: Bundle.module.url(forResource: "superAnimation", withExtension: "json")!) { animtion in
-            self.lottieAnimationView.animation = animtion
-            self.lottieAnimationView.loopMode = .autoReverse
-            self.lottieAnimationView.contentMode = .scaleAspectFill
-            self.lottieAnimationView.backgroundBehavior = .pauseAndRestore
-            self.lottieAnimationView.backgroundColor = .clear
-            self.lottieAnimationView.play()
-        }
+//        LottieAnimation.loadedFrom(url: Bundle.module.url(forResource: "superAnimation", withExtension: "json")!) { animtion in
+//            self.lottieAnimationView.animation = animtion
+//            self.lottieAnimationView.loopMode = .autoReverse
+//            self.lottieAnimationView.contentMode = .scaleAspectFill
+//            self.lottieAnimationView.backgroundBehavior = .pauseAndRestore
+//            self.lottieAnimationView.backgroundColor = .clear
+//            self.lottieAnimationView.play()
+//        }
     }
     
     @IBAction func buyButtonTapped(_ sender: Any) {
