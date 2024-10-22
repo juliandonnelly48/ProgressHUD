@@ -28,7 +28,7 @@
                         <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="VOK-dB-PB3"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7X-YV-mIe" customClass="LottieAnimationView" customModule="Lottie">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7X-YV-mIe">
                     <rect key="frame" x="0.0" y="109" width="393" height="393"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
