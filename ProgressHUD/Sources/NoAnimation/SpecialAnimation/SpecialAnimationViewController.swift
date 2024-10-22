@@ -8,19 +8,17 @@ public class SpecialAnimationViewController: UIViewController {
         SpecialAnimationView.instanceFromNib()
     }()
     
-    private let price: String
+    var price: String
     var dismissed: (() -> ())?
-//    private let networkManager = NetworkManager()
-
+    var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
     
     public init(_ model: DataOfferObjectLib? = nil, price: String ,delegate: SpecialAnimationDelegate) {
         self.delegate = delegate
         self.price = price
+        self.model = model
         
         super.init(nibName: nil, bundle: nil)
-        
-        self.offerView.model = model
     }
     
     required init?(coder: NSCoder) {
@@ -33,6 +31,8 @@ public class SpecialAnimationViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.offerView.model = model
         
         ScreenShield.shared.protect(view: self.view)
         ScreenShield.shared.protectFromScreenRecording()
@@ -50,9 +50,6 @@ public class SpecialAnimationViewController: UIViewController {
     
     private func bindToView() {
         offerView.continueButtonTapped = { [weak self] in
-//            guard let selectedTariff = Storage.allTariffs?.first else { return }
-            
-//            self?.purchase(tarif: selectedTariff)
             self?.delegate?.buttonTapped()
         }
         
@@ -62,47 +59,17 @@ public class SpecialAnimationViewController: UIViewController {
             self.dismiss(animated: true)
         }
         
-//        guard let price = Storage.allTariffs?.first.map({$0.localizedPrice ?? "$\($0.price)"}) else { return }
         offerView.priceLabel.text =  "\(price) per year. Cancel anytime"
     }
     
-//    private func purchase(tarif: TariffObject) {
-//        showProgressAction()
-//        
-//        networkManager.buyTarif(tarif: tarif) { [weak self] purchasedTarif, success, _ in
-//            DispatchQueue.main.async {
-//                self?.offerView.buyButton.isEnabled = true
-//            }
-//            
-//            if success {
-//                self?.showSuccessAction()
-//                Storage.saveCurrentTarif(purchasedTarif)
-//                
-//                DispatchQueue.main.async {
-//                    let vc = ReslutAnimationViewContoller(self?.offerView.model)
-//                    let nc = UINavigationController(rootViewController: vc)
-//                    
-//                    nc.modalPresentationStyle = .fullScreen
-//                    
-//                    self?.present(nc, animated: true)
-//                }
-//            } else {                
-//                DispatchQueue.main.async {
-//                    self?.showFailureAction()
-//                }
-//            }
-//        }
-//    }
-    
-//    private func showProgressAction() {
-//        ProgressHUD.animate(interaction: false)
-//    }
-//    
-//    private func showSuccessAction() {
-//        ProgressHUD.success(interaction: false)
-//    }
-//    
-//    private func showFailureAction() {
-//        ProgressHUD.failed(interaction: false)
-//    }
+    public func goToResult() {
+        DispatchQueue.main.async {
+            let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
+            let nc = UINavigationController(rootViewController: vc)
+            
+            nc.modalPresentationStyle = .fullScreen
+            
+            self.present(nc, animated: true)
+        }
+    }
 }

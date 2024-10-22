@@ -5,9 +5,8 @@ import ScreenShield
 
 class DetailAnimationViewController: UIViewController {
     private let detailInformView = DetailAnimationView.instanceFromNib()
-    private let model: DataOfferObjectLib?
-//    private let networkManager = NetworkManager()
-
+    
+    var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
     
     init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
@@ -15,8 +14,6 @@ class DetailAnimationViewController: UIViewController {
         self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
-        
-        detailInformView.setup(with: model)
     }
     
     required init?(coder: NSCoder) {
@@ -30,12 +27,10 @@ class DetailAnimationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailInformView.setup(with: model)
         navigationController?.isNavigationBarHidden = true
         
         detailInformView.continueButtonTapped = { [weak self] in
-//            guard let selectedTariff = Storage.allTariffs?.first else { return }
-//            
-//            self?.purchase(tarif: selectedTariff)
             self?.delegate?.buttonTapped()
         }
         
@@ -49,40 +44,11 @@ class DetailAnimationViewController: UIViewController {
         detailInformView.showAlertAndPush()
     }
     
-//    private func purchase(tarif: TariffObject) {
-//        showProgressAction()
-//        
-//        networkManager.buyTarif(tarif: tarif) { [weak self] purchasedTarif, success, _ in
-//            DispatchQueue.main.async {
-//                self?.detailInformView.alertButton.isEnabled = true
-//            }
-//            
-//            if success {
-//                self?.showSuccessAction()
-//                Storage.saveCurrentTarif(purchasedTarif)
-//                
-//                DispatchQueue.main.async {
-//                    let vc = ReslutAnimationViewContoller(self?.model)
-//                    
-//                    self?.navigationController?.pushViewController(vc, animated: true)
-//                }
-//            } else {
-//                DispatchQueue.main.async {
-//                    self?.showFailureAction()
-//                }
-//            }
-//        }
-//    }
-    
-    private func showProgressAction() {
-        ProgressHUD.animate(interaction: false)
-    }
-    
-    private func showSuccessAction() {
-        ProgressHUD.success(interaction: false)
-    }
-    
-    private func showFailureAction() {
-        ProgressHUD.failed(interaction: false)
+    public func goToResult() {
+        DispatchQueue.main.async {
+            let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

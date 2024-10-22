@@ -62,7 +62,6 @@ class GreatAnimationView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func buyButtonTapped(_ sender: Any) {
-        buybutton.isEnabled = false
         continueButtonTapped?()
     }
     

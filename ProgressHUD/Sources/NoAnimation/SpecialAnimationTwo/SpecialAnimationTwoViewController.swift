@@ -32,21 +32,19 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
     
     private let specialOfferTwoView = SpecialAnimationTwo.instanceFromNib()
     private var data: [LogEntry] = []
-    private let model: DataOfferObjectLib?
     private var index = 0
-//    private let networkManager = NetworkManager()
-
+    private lazy var vc: DetailAnimationViewController = {
+        return DetailAnimationViewController(model, delegate: self)
+    }()
     weak var delegate: SpecialAnimationDelegate?
     var dismissed: (() -> ())?
-    
+    var model: DataOfferObjectLib?
     
     public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
-        
-        specialOfferTwoView.setup(with: model)
     }
     
     required init?(coder: NSCoder) {
@@ -60,8 +58,7 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindToView()
-        
+        specialOfferTwoView.setup(with: model)
         specialOfferTwoView.tableView.separatorStyle = .singleLine
         specialOfferTwoView.tableView.dataSource = self
         specialOfferTwoView.tableView.delegate = self
@@ -82,9 +79,9 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
                     timer.invalidate()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        let vc = DetailAnimationViewController(self.model, delegate: self)
+                        self.vc.model = self.model
                         
-                        self.navigationController?.pushViewController(vc, animated: true)
+                        self.navigationController?.pushViewController(self.vc, animated: true)
                     }
                 }
             }
@@ -102,50 +99,9 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
         specialOfferTwoView.timer?.invalidate()
     }
     
-    private func bindToView() {
-//        specialOfferTwoView.continueButtonTapped = { [weak self] in
-//            guard let selectedTariff = Storage.allTariffs?.first else { return }
-//            
-//            self?.purchase(tarif: selectedTariff)
-//        }
+    public func triggerToDetail() {
+        vc.goToResult()
     }
-    
-//    private func purchase(tarif: TariffObject) {
-//        guard !tarif.isActive else {
-//            return
-//        }
-//        
-//        showProgressAction()
-//        
-//        networkManager.buyTarif(tarif: tarif) { [weak self] purchasedTarif, success, _ in
-//            if success {
-//                self?.showSuccessAction()
-//                Storage.saveCurrentTarif(purchasedTarif)
-//                
-//                DispatchQueue.main.async {
-//                    self?.dismiss(animated: true) {
-//                        self?.dismissed?()
-//                    }
-//                }
-//            } else {
-//                DispatchQueue.main.async {
-//                    self?.showFailureAction()
-//                }
-//            }
-//        }
-//    }
-    
-//    private func showProgressAction() {
-//        ProgressHUD.animate(interaction: false)
-//    }
-//    
-//    private func showSuccessAction() {
-//        ProgressHUD.success(interaction: false)
-//    }
-//    
-//    private func showFailureAction() {
-//        ProgressHUD.failed(interaction: false)
-//    }
     
     private func getCurrentDateTime() -> String {
         let formatter = DateFormatter()

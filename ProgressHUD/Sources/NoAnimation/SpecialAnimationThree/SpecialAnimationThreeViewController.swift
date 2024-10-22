@@ -68,8 +68,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
         return button
     }()
     
-    private let model: DataOfferObjectLib?
-//    private let networkManager = NetworkManager()
+    var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
     
     public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
@@ -204,10 +203,6 @@ public class SpecialAnimationThreeViewController: UIViewController {
         let alert = UIAlertController(title: model?.objectTwo?.dark_blue.al_title, message: alertMess, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-//            guard let selectedTariff = Storage.allTariffs?.first else { return }
-            
-            self?.actionButton.isEnabled = false
-//            self?.purchase(tarif: selectedTariff)
             self?.delegate?.buttonTapped()
         }
         
@@ -221,42 +216,13 @@ public class SpecialAnimationThreeViewController: UIViewController {
         showSingleButtonAlert()
     }
     
-//    private func purchase(tarif: TariffObject) {
-//        showProgressAction()
-//        
-//        networkManager.buyTarif(tarif: tarif) { [weak self] purchasedTarif, success, _ in
-//            DispatchQueue.main.async {
-//                self?.actionButton.isEnabled = true
-//            }
-//            
-//            if success {
-//                self?.showSuccessAction()
-//                Storage.saveCurrentTarif(purchasedTarif)
-//                
-//                DispatchQueue.main.async {
-//                    let vc = ReslutAnimationViewContoller(self?.model)
-//                    
-//                    self?.navigationController?.pushViewController(vc, animated: true)
-//                }
-//            } else {
-//                DispatchQueue.main.async {
-//                    self?.showFailureAction()
-//                }
-//            }
-//        }
-//    }
-    
-//    private func showProgressAction() {
-//        ProgressHUD.animate(interaction: false)
-//    }
-//    
-//    private func showSuccessAction() {
-//        ProgressHUD.success(interaction: false)
-//    }
-//    
-//    private func showFailureAction() {
-//        ProgressHUD.failed(interaction: false)
-//    }
+    public func goToResult() {
+        DispatchQueue.main.async {
+            let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension LAContext {

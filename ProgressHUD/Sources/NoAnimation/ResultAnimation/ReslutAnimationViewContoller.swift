@@ -9,12 +9,11 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
     
     private let resultView = ResultAnimationView.instanceFromNib()
     private let model: DataOfferObjectLib?
-    private let isPaid: Bool
-//    private let networkManager = NetworkManager()
+    var isPaid: Bool
 
     weak var delegate: SpecialAnimationDelegate?
     
-    public init(_ model: DataOfferObjectLib? = nil, isPaid: Bool, delegate: SpecialAnimationDelegate) {
+    public init(_ model: DataOfferObjectLib? = nil, isPaid: Bool, delegate: SpecialAnimationDelegate?) {
         self.model = model
         self.delegate = delegate
         self.isPaid = isPaid

@@ -13,7 +13,6 @@ public class SpecialAnimationFourViewController: UIViewController {
     private let topLabel = UILabel()
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let bottomView = BottomAnimationView()
-//    private let networkManager = NetworkManager()
     private var data: [(String, String)] = [] {
         didSet {
             DispatchQueue.main.async {
@@ -21,8 +20,8 @@ public class SpecialAnimationFourViewController: UIViewController {
             }
         }
     }
-    private let model: DataOfferObjectLib?
     
+    var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
     
     public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
@@ -30,9 +29,6 @@ public class SpecialAnimationFourViewController: UIViewController {
         self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
-        
-        bottomView.model = self.model
-        data = model?.objectTwo?.center.items.map({ ($0.name ?? "", $0.res ?? "") }) ?? []
     }
     
     required init?(coder: NSCoder) {
@@ -42,13 +38,12 @@ public class SpecialAnimationFourViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        data = model?.objectTwo?.center.items.map({ ($0.name ?? "", $0.res ?? "") }) ?? []
+        bottomView.model = self.model
         setupUI()
         setConstraints()
         
         bottomView.buttonTapped = { [weak self] in
-//            guard let selectedTariff = Storage.allTariffs?.first else { return }
-            
-            self?.bottomView.actionButton.isEnabled = false
             self?.delegate?.buttonTapped()
         }
         
@@ -130,42 +125,13 @@ public class SpecialAnimationFourViewController: UIViewController {
         }
     }
     
-//    private func purchase(tarif: TariffObject) {
-//        showProgressAction()
-//        
-//        networkManager.buyTarif(tarif: tarif) { [weak self] purchasedTarif, success, _ in
-//            DispatchQueue.main.async {
-//                self?.bottomView.actionButton.isEnabled = true
-//            }
-//            
-//            if success {
-//                self?.showSuccessAction()
-//                Storage.saveCurrentTarif(purchasedTarif)
-//                
-//                DispatchQueue.main.async {
-//                    let vc = ReslutAnimationViewContoller(self?.model)
-//                    
-//                    self?.navigationController?.pushViewController(vc, animated: true)
-//                }
-//            } else {
-//                DispatchQueue.main.async {
-//                    self?.showFailureAction()
-//                }
-//            }
-//        }
-//    }
-    
-//    private func showProgressAction() {
-//        ProgressHUD.animate(interaction: false)
-//    }
-//    
-//    private func showSuccessAction() {
-//        ProgressHUD.success(interaction: false)
-//    }
-//    
-//    private func showFailureAction() {
-//        ProgressHUD.failed(interaction: false)
-//    }
+    public func goToResult() {
+        DispatchQueue.main.async {
+            let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension SpecialAnimationFourViewController: UITableViewDataSource, UITableViewDelegate {
