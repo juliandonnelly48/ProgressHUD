@@ -40,7 +40,7 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
     var dismissed: (() -> ())?
     
     
-    init(_ model: DataOfferObject? = nil, delegate: SpecialAnimationDelegate) {
+    public init(_ model: DataOfferObject? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         

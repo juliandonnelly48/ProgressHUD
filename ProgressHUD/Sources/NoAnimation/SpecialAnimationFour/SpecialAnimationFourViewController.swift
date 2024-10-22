@@ -25,7 +25,7 @@ public class SpecialAnimationFourViewController: UIViewController {
     
     weak var delegate: SpecialAnimationDelegate?
     
-    init(_ model: DataOfferObject? = nil, delegate: SpecialAnimationDelegate) {
+    public init(_ model: DataOfferObject? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         

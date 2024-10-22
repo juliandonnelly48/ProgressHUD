@@ -14,7 +14,7 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
 
     weak var delegate: SpecialAnimationDelegate?
     
-    init(_ model: DataOfferObject? = nil, isPaid: Bool ,delegate: SpecialAnimationDelegate) {
+    public init(_ model: DataOfferObject? = nil, isPaid: Bool, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         self.isPaid = isPaid

@@ -239,7 +239,7 @@ public struct SVGImgProcessor: ImageProcessor {
     }
 }
 
-struct DataOfferObject {
+public struct DataOfferObject {
     var imageUrl: String
     var title: String
     var subtitle: String
@@ -270,7 +270,7 @@ struct DataOfferObject {
     var objectTwo: ObjectTwo?
 }
 
-struct ObjectTwo {
+public struct ObjectTwo {
     let center: Center
     let dark_blue: DarkBlue
     let description: Description
@@ -288,7 +288,7 @@ struct ObjectTwo {
         }
     }
     
-    struct DarkBlue {
+    public struct DarkBlue {
         var subtitle: String?
         var small_img: String?
         var title: String?
@@ -299,7 +299,7 @@ struct ObjectTwo {
         var footer_text: String?
     }
     
-    struct Description {
+    public struct Description {
         var btn_subtitle_color: String?
         var subtitle: String?
         var items_title: String?
@@ -311,7 +311,7 @@ struct ObjectTwo {
     }
 }
 
-struct ScnObj {
+public struct ScnObj {
     var title_proc            : String?
     var subtitle_proc        : String?
     var title_anim_proc        : String?
@@ -338,14 +338,14 @@ struct ScnObj {
     
     var features            : [Features]?
     
-    struct Features {
+    public struct Features {
         var name    : String?
         var g_status: String?
         var b_status: String?
     }
 }
 
-struct PrtdObj {
+public struct PrtdObj {
     var icon        : String?
     var title        : String?
     var ip            : String?
@@ -357,7 +357,7 @@ struct PrtdObj {
     var modal_text    : String?
     var issues        : [IssuesObj]?
     
-    struct IssuesObj {
+    public struct IssuesObj {
         var icon    : String?
         var name: String?
         var status: String?
