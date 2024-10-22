@@ -1,8 +1,8 @@
 
 import UIKit
 
-class SuperOfferViewController: UIViewController {
-	var superOfferView = SuperOfferView.instanceFromNib()
+class SuperAnimationViewController: UIViewController {
+	var superOfferView = SuperAnimationView.instanceFromNib()
 	
 //	private let networkManager = NetworkManager()
 	

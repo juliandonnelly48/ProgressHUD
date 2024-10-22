@@ -3,8 +3,8 @@
 import UIKit
 import AudioToolbox
 
-class SpecialOfferTwo: UIView, InstanceFromNibProtocol {
-    typealias InstanceFromNibType = SpecialOfferTwo
+class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
+    typealias InstanceFromNibType = SpecialAnimationTwo
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!

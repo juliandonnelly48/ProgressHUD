@@ -2,8 +2,8 @@
 import UIKit
 import Lottie
 
-class SuperOfferView: UIView, InstanceFromNibProtocol {
-	typealias InstanceFromNibType = SuperOfferView
+class SuperAnimationView: UIView, InstanceFromNibProtocol {
+	typealias InstanceFromNibType = SuperAnimationView
 	
 	
     @IBOutlet weak var titleLabel: UILabel!
@@ -11,7 +11,7 @@ class SuperOfferView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var cancelLabel: UILabel!
     @IBOutlet weak var animationView: LottieAnimationView! {
 		didSet {
-			animationView.animation = LottieAnimation.named("superOffer")
+			animationView.animation = LottieAnimation.named("superAnimation")
 			animationView.loopMode = .autoReverse
 			animationView.contentMode = .scaleAspectFill
 			animationView.backgroundBehavior = .pauseAndRestore

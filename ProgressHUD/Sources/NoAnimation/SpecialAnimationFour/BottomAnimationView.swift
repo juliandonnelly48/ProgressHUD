@@ -3,7 +3,7 @@ import UIKit
 import ScreenShield
 import SnapKit
 
-class BottomCustomView: UIView {
+class BottomAnimationView: UIView {
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit

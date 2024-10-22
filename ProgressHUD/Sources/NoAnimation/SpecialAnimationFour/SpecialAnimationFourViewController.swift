@@ -6,13 +6,13 @@ protocol SpecialAnimationDelegate: AnyObject {
     func buttonTapped()
 }
 
-class SpecialOfferFourViewController: UIViewController {
+public class SpecialAnimationFourViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let bottomLabel = UILabel()
     private let topLabel = UILabel()
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private let bottomView = BottomCustomView()
+    private let bottomView = BottomAnimationView()
 //    private let networkManager = NetworkManager()
     private var data: [(String, String)] = [] {
         didSet {
@@ -39,7 +39,7 @@ class SpecialOfferFourViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
@@ -58,7 +58,7 @@ class SpecialOfferFourViewController: UIViewController {
         ScreenShield.shared.protectFromScreenRecording()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.isHidden = true
@@ -168,16 +168,16 @@ class SpecialOfferFourViewController: UIViewController {
 //    }
 }
 
-extension SpecialOfferFourViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
+extension SpecialAnimationFourViewController: UITableViewDataSource, UITableViewDelegate {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let leftLabel = UILabel()
         
@@ -209,7 +209,7 @@ extension SpecialOfferFourViewController: UITableViewDataSource, UITableViewDele
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return model?.objectTwo?.center.subtitle
     }
 }

@@ -25,12 +25,12 @@ enum LogLevel {
     }
 }
 
-class SpecialOfferTwoViewController: UIViewController, SpecialAnimationDelegate {
+public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimationDelegate {
     func buttonTapped() {
         delegate?.buttonTapped()
     }
     
-    private let specialOfferTwoView = SpecialOfferTwo.instanceFromNib()
+    private let specialOfferTwoView = SpecialAnimationTwo.instanceFromNib()
     private var data: [LogEntry] = []
     private let model: DataOfferObject?
     private var index = 0
@@ -53,11 +53,11 @@ class SpecialOfferTwoViewController: UIViewController, SpecialAnimationDelegate 
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = specialOfferTwoView
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         bindToView()
@@ -96,7 +96,7 @@ class SpecialOfferTwoViewController: UIViewController, SpecialAnimationDelegate 
         ScreenShield.shared.protectFromScreenRecording()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         specialOfferTwoView.timer?.invalidate()
@@ -181,12 +181,12 @@ class SpecialOfferTwoViewController: UIViewController, SpecialAnimationDelegate 
     }
 }
 
-extension SpecialOfferTwoViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension SpecialAnimationTwoViewController: UITableViewDataSource, UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count + 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DotTableViewCell", for: indexPath) as? DotTableViewCell
             

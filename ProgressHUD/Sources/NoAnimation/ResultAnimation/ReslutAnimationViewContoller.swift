@@ -2,7 +2,7 @@
 import UIKit
 import ScreenShield
 
-class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
+public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
     func buttonTapped() {
         delegate?.buttonTapped()
     }
@@ -26,7 +26,7 @@ class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let secureView = SecureField().secureContainer else { return }
@@ -41,7 +41,7 @@ class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
         resultView.tariffButtonTapped = { [weak self] in
             guard let self else { return }
             
-            let vc = SuperOfferViewController(price: nil, delegate: self)
+            let vc = SuperAnimationViewController(price: nil, delegate: self)
             
             vc.modalPresentationStyle = .fullScreen
             
@@ -49,13 +49,13 @@ class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         resultView.setup(with: model, isTarifPaidAndActive: isPaid)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         resultView.timerBzz?.invalidate()

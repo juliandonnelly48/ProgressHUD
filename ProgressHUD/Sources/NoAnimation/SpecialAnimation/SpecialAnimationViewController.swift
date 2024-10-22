@@ -3,7 +3,7 @@
 import UIKit
 import ScreenShield
 
-class SpecialAnimationViewController: UIViewController {
+public class SpecialAnimationViewController: UIViewController {
     private lazy var offerView: SpecialAnimationView = {
         SpecialAnimationView.instanceFromNib()
     }()
@@ -27,11 +27,11 @@ class SpecialAnimationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = offerView
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         ScreenShield.shared.protect(view: self.view)
@@ -42,7 +42,7 @@ class SpecialAnimationViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         offerView.timer?.invalidate()
