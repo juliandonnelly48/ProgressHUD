@@ -3,8 +3,8 @@ import UIKit
 import ScreenShield
 
 public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
-    public func buttonTapped() {
-        delegate?.buttonTapped()
+    public func buttonTapped(isResult: Bool) {
+        delegate?.buttonTapped(isResult: isResult)
     }
     
     private let resultView = ResultAnimationView.instanceFromNib()

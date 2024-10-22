@@ -26,8 +26,8 @@ enum LogLevel {
 }
 
 public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimationDelegate {
-    public func buttonTapped() {
-        delegate?.buttonTapped()
+    public func buttonTapped(isResult: Bool) {
+        delegate?.buttonTapped(isResult: isResult)
     }
     
     private let specialOfferTwoView = SpecialAnimationTwo.instanceFromNib()

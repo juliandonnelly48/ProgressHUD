@@ -203,7 +203,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
         let alert = UIAlertController(title: model?.objectTwo?.dark_blue.al_title, message: alertMess, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
-            self?.delegate?.buttonTapped()
+            self?.delegate?.buttonTapped(isResult: false)
         }
         
         alert.addAction(cancelAction)

@@ -3,7 +3,7 @@ import UIKit
 import ScreenShield
 
 public protocol SpecialAnimationDelegate: AnyObject {
-    func buttonTapped()
+    func buttonTapped(isResult: Bool)
 }
 
 public class SpecialAnimationFourViewController: UIViewController {
@@ -45,7 +45,7 @@ public class SpecialAnimationFourViewController: UIViewController {
         setConstraints()
         
         bottomView.buttonTapped = { [weak self] in
-            self?.delegate?.buttonTapped()
+            self?.delegate?.buttonTapped(isResult: false)
         }
         
         ScreenShield.shared.protect(view: self.bottomLabel)

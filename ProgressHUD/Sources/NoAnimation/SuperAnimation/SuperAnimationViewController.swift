@@ -31,7 +31,7 @@ class SuperAnimationViewController: UIViewController {
 	
 	private func bindToView() {
 		superOfferView.continueButtonTapped = { [weak self] in
-            self?.delegate?.buttonTapped()
+            self?.delegate?.buttonTapped(isResult: true)
 		}
 		
 		superOfferView.closeButtonTapped = { [weak self] in

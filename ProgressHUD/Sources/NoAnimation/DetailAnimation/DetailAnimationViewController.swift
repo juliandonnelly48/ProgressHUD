@@ -31,7 +31,7 @@ class DetailAnimationViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         
         detailInformView.continueButtonTapped = { [weak self] in
-            self?.delegate?.buttonTapped()
+            self?.delegate?.buttonTapped(isResult: false)
         }
         
         ScreenShield.shared.protectFromScreenRecording()

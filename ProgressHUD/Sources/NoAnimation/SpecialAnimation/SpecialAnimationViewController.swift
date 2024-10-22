@@ -50,7 +50,7 @@ public class SpecialAnimationViewController: UIViewController {
     
     private func bindToView() {
         offerView.continueButtonTapped = { [weak self] in
-            self?.delegate?.buttonTapped()
+            self?.delegate?.buttonTapped(isResult: false)
         }
         
         offerView.closeButtonTapped = { [weak self] in
