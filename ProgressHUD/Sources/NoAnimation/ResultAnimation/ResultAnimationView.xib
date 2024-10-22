@@ -38,7 +38,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inActiveSub" translatesAutoresizingMaskIntoConstraints="NO" id="M8q-mZ-RbB">
                     <rect key="frame" x="57" y="160.33333333333337" width="279" height="279"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-sZ-e7r" customClass="CircularProgressView" customModule="CheckerOrganize" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-sZ-e7r" customClass="CircularProgressView" customModule="ProgressHUD">
                     <rect key="frame" x="87" y="190.33333333333337" width="219" height="219"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
