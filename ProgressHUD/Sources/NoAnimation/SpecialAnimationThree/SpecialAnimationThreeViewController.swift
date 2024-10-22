@@ -116,14 +116,14 @@ public class SpecialAnimationThreeViewController: UIViewController {
     }
 
     private func setUI() {
-        guard let mainUrl = URL(string: "https://checkerorganizerapp.com\(model?.objectTwo?.dark_blue.main_img ?? "")") else { return }
+        guard let mainUrl = URL(string: model?.objectTwo?.dark_blue.main_img ?? "") else { return }
         
         topImageView.kf.setImage(with: mainUrl, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         
         titleLabel.text = model?.objectTwo?.dark_blue.title
         subtitleLabel.text = model?.objectTwo?.dark_blue.subtitle
         
-        guard let smallUrl = URL(string: "https://checkerorganizerapp.com\(model?.objectTwo?.dark_blue.small_img ?? "")") else { return }
+        guard let smallUrl = URL(string: model?.objectTwo?.dark_blue.small_img ?? "") else { return }
         
         lowImageIconView.kf.setImage(with: smallUrl, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         lowLabel.text = model?.objectTwo?.dark_blue.footer_text

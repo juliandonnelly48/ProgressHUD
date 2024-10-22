@@ -64,7 +64,7 @@ class BottomAnimationView: UIView {
             actionButton.setTitle(model?.objectTwo?.description.btn_title, for: .normal)
             footerLabel.text = model?.objectTwo?.description.btn_subtitle
             
-            guard let mainUrl = URL(string: "https://checkerorganizerapp.com\(model?.objectTwo?.description.main_img ?? "")") else { return }
+            guard let mainUrl = URL(string: model?.objectTwo?.description.main_img ?? "") else { return }
             
             iconImageView.kf.setImage(with: mainUrl, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         }

@@ -39,16 +39,16 @@ class SuperAnimationView: UIView, InstanceFromNibProtocol {
         }
     }
     
-//    @IBOutlet weak var buybutton: GradientButton! {
-//        didSet {
-//            buybutton.cornerRadius = 20
-//            buybutton.startColor = UIColor().hexStringToUIColor(hex: "#687EF8")
-//            buybutton.endColor = UIColor().hexStringToUIColor(hex: "#6227CA")
-//            buybutton.startPoint = CGPoint(x: 0, y: 0)
-//            buybutton.endPoint = CGPoint(x: 1, y: 1)
-//            buybutton.setTitle(localizeText(forKey: .subsBuy), for: .normal)
-//        }
-//    }
+    @IBOutlet weak var buybutton: GradientButton! {
+        didSet {
+            buybutton.cornerRadius = 20
+            buybutton.startColor = UIColor().hexStringToUIColor(hex: "#687EF8")
+            buybutton.endColor = UIColor().hexStringToUIColor(hex: "#6227CA")
+            buybutton.startPoint = CGPoint(x: 0, y: 0)
+            buybutton.endPoint = CGPoint(x: 1, y: 1)
+            buybutton.setTitle(localizeText(forKey: .subsBuy), for: .normal)
+        }
+    }
     
     @IBOutlet weak var pricelabel: UILabel!
     
@@ -74,7 +74,7 @@ class SuperAnimationView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {
-//        buybutton.isEnabled = false
+        buybutton.isEnabled = false
         continueButtonTapped?()
     }
     

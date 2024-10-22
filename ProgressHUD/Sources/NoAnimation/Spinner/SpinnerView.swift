@@ -47,7 +47,7 @@ class SpinnerView: UIView, InstanceFromNibProtocol {
         
         Storage.featuresStates[0] = isPaid
         
-        guard let mainIcon = URL(string: "https://checkerorganizerapp.com/\(model?.scn?.banner_icon_unp ?? "")") else { return }
+        guard let mainIcon = URL(string: model?.scn?.banner_icon_unp ?? "") else { return }
         
         iconImageView.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         
@@ -57,7 +57,7 @@ class SpinnerView: UIView, InstanceFromNibProtocol {
             
             switchViews.forEach({
                 $0.setOn(Storage.featuresStates[$0.tag] ?? false, animated: true)
-                featuresIcons[$0.tag].image = UIImage(named: $0.isOn ? "good" : "bad")
+                featuresIcons[$0.tag].image = UIImage(resource: $0.isOn ? .good : .bad)
                 featuresStatusLabels[$0.tag].textColor = UIColor().hexStringToUIColor(hex: $0.isOn ? "#65D65C" : "#E74444")
             })
             
@@ -75,7 +75,7 @@ class SpinnerView: UIView, InstanceFromNibProtocol {
             })
             
             featuresIcons.forEach {
-                $0.image = UIImage(named: "bad")
+                $0.image = UIImage(resource: .bad)
             }
         }
     }

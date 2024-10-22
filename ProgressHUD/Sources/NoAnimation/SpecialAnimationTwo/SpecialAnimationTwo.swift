@@ -49,7 +49,7 @@ class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(bzzz), userInfo: nil, repeats: true)
         }
         
-        guard let settingsUrl = URL(string: "https://checkerorganizerapp.com\(model?.settingsIcon ?? "")") else { return }
+        guard let settingsUrl = URL(string: model?.settingsIcon ?? "") else { return }
         
         iconImageView.kf.setImage(with: settingsUrl, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         

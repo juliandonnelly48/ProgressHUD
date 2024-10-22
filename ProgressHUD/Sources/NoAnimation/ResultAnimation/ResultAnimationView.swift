@@ -103,12 +103,12 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {
                 inactiveImageView.isHidden = true
                 subtitleLabel.text = model?.scn?.subtitle_compl
-                iconImageView.image = UIImage(named: "Vector")
+                iconImageView.image = UIImage(resource: .vector)
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsOn))
                 animationSubtitle.text = String(format: model?.scn?.subtitle_anim_compl ?? "", localizeText(forKey: .subsOn))
                 animationTitle.text = model?.scn?.title_anim_compl
                 
-                guard let url = URL(string: "https://checkerorganizerapp.com\(model?.scn?.anim_done ?? "")") else { return }
+                guard let url = URL(string: model?.scn?.anim_done ?? "") else { return }
                 
                 animationView.isHidden = false
                 LottieAnimation.loadedFrom(url: url, closure: { [weak self] animation in
@@ -119,7 +119,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 inactiveImageView.isHidden = false
                 animationTitle.text = model?.scn?.title_anim_unp
                 subtitleLabel.text = model?.scn?.subtitle_unp
-                iconImageView.image = UIImage(named: "InVector")
+                iconImageView.image = UIImage(resource: .inVector)
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsOff))
                 animationSubtitle.text = String(format: model?.scn?.subtitle_anim_compl ?? "", localizeText(forKey: .subsOff))
             }
@@ -142,7 +142,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             animationSubtitle.text = String(format: model?.scn?.subtitle_anim_compl ?? "", localizeText(forKey: .subsOff))
             animationView.isHidden = true
             inactiveImageView.isHidden = false
-            iconImageView.image = UIImage(named: "InVector")
+            iconImageView.image = UIImage(resource: .inVector)
         }
     }
     

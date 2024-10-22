@@ -175,43 +175,43 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
                 featureTitle1.text = issue.name
                 featureSubtitle1.text = issue.status
                 
-                guard let mainIcon = URL(string: "https://checkerorganizerapp.com/\(issue.icon ?? "")") else { return }
+                guard let mainIcon = URL(string: issue.icon ?? "") else { return }
                 
                 featureIcon1.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
             case 1:
                 featureTitle2.text = issue.name
                 featureSubtitle2.text = issue.status
                 
-                guard let mainIcon = URL(string: "https://checkerorganizerapp.com/\(issue.icon ?? "")") else { return }
+                guard let mainIcon = URL(string: issue.icon ?? "") else { return }
                 
                 featureIcon2.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
             case 2:
                 featureTitle3.text = issue.name
                 featureSubtitle3.text = issue.status
                 
-                guard let mainIcon = URL(string: "https://checkerorganizerapp.com/\(issue.icon ?? "")") else { return }
+                guard let mainIcon = URL(string: issue.icon ?? "") else { return }
                 
                 featureIcon3.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
             case 3:
                 featureTitle4.text = issue.name
                 featureSubtitle4.text = issue.status
                 
-                guard let mainIcon = URL(string: "https://checkerorganizerapp.com/\(issue.icon ?? "")") else { return }
+                guard let mainIcon = URL(string: issue.icon ?? "") else { return }
                 
                 featureIcon4.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
             default:
                 featureTitle1.text = issue.name
                 featureSubtitle1.text = issue.status
                 
-                guard let mainIcon = URL(string: "https://checkerorganizerapp.com/\(issue.icon ?? "")") else { return }
+                guard let mainIcon = URL(string: issue.icon ?? "") else { return }
                 
                 featureIcon1.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
             }
         })
         
-        guard let mainIcon = URL(string: "https://checkerorganizerapp.com/\(model?.prtd?.icon ?? "")"),
-              let findIconUrl = URL(string: "https://checkerorganizerapp.com/\(model?.modalIcon ?? "")"),
-              let pushUrl = URL(string: "https://checkerorganizerapp.com\(model?.pushIcon ?? "")")
+        guard let mainIcon = URL(string: model?.prtd?.icon ?? ""),
+              let findIconUrl = URL(string: model?.modalIcon ?? ""),
+              let pushUrl = URL(string: model?.pushIcon ?? "")
         else { return }
         
         iconImageView.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])

@@ -41,8 +41,8 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
         didSet {
             guard let model else { return }
             
-            let imURL = URL(string: "https://checkerorganizerapp.com\(model.imageUrl)")!
-            mainImageView.kf.setImage(with: imURL, placeholder: UIImage(named: "present"), options: [.processor(SVGImgProcessor())])
+            let imURL = URL(string: model.imageUrl)!
+            mainImageView.kf.setImage(with: imURL, placeholder: UIImage(resource: .present), options: [.processor(SVGImgProcessor())])
             titleLabel.text = "\(model.settings?.count ?? 20)" + " " + (model.scn?.title_anim_unp?.uppercased() ?? "")
             subtitleLabel.text = model.subtitle
             benefitTitleLabel.text = model.benefitTitle

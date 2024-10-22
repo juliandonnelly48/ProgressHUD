@@ -1,9 +1,3 @@
-//
-//  CircularProgressView.swift
-//  CheckerOrganize
-//
-//  Created by Koryun on 16.10.24.
-//
 
 import UIKit
 import QuartzCore
