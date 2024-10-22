@@ -105,7 +105,6 @@
                 <constraint firstItem="y39-NL-16J" firstAttribute="top" secondItem="XfJ-73-zFW" secondAttribute="bottom" constant="28" id="v8J-Wg-4yW"/>
             </constraints>
             <connections>
-                <outlet property="buybutton" destination="9Qh-1v-mK4" id="0Rz-by-lwE"/>
                 <outlet property="cancellabel" destination="PJO-zz-UP3" id="pi8-IL-F6o"/>
                 <outlet property="infoview" destination="y39-NL-16J" id="mFB-dk-LQL"/>
                 <outlet property="lottieAnimationView" destination="o7X-YV-mIe" id="ANw-Eq-c4f"/>
