@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SuperAnimationView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GreatAnimationView" customModule="ProgressHUD">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -25,7 +25,7 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="xmark.circle.fill" catalog="system"/>
                     <connections>
-                        <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="VOK-dB-PB3"/>
+                        <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="sDY-aR-esT"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7X-YV-mIe" customClass="LottieAnimationView" customModule="Lottie">
@@ -56,7 +56,7 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Grab 3-Days Free Trial"/>
                     <connections>
-                        <action selector="buyButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="4Fb-JV-SSA"/>
+                        <action selector="buyButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="M9u-Gc-gmA"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3-days free trial, then only $9.99/week" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5k-Oa-9fC">
@@ -105,13 +105,13 @@
                 <constraint firstItem="y39-NL-16J" firstAttribute="top" secondItem="XfJ-73-zFW" secondAttribute="bottom" constant="28" id="v8J-Wg-4yW"/>
             </constraints>
             <connections>
-                <outlet property="buybutton" destination="9Qh-1v-mK4" id="sju-Jb-GJL"/>
-                <outlet property="cancellabel" destination="PJO-zz-UP3" id="8mq-l8-G6O"/>
-                <outlet property="infoview" destination="y39-NL-16J" id="2vP-lp-l64"/>
-                <outlet property="lottieAnimationView" destination="o7X-YV-mIe" id="Fp8-yg-kqm"/>
-                <outlet property="pricelabel" destination="X5k-Oa-9fC" id="HGU-oQ-b1z"/>
-                <outlet property="subtitleLabel" destination="XfJ-73-zFW" id="PJs-uI-Zob"/>
-                <outlet property="titlelabel" destination="g3P-2q-6uQ" id="cZU-YO-b9m"/>
+                <outlet property="buybutton" destination="9Qh-1v-mK4" id="GKF-iH-Ib7"/>
+                <outlet property="cancellabel" destination="PJO-zz-UP3" id="bQd-Cu-Hed"/>
+                <outlet property="infoview" destination="y39-NL-16J" id="VXI-wT-Wu1"/>
+                <outlet property="lottieAnimationView" destination="o7X-YV-mIe" id="5LS-WS-kzw"/>
+                <outlet property="pricelabel" destination="X5k-Oa-9fC" id="QFV-58-swc"/>
+                <outlet property="subtitleLabel" destination="XfJ-73-zFW" id="T66-df-5T4"/>
+                <outlet property="titlelabel" destination="g3P-2q-6uQ" id="bLA-nG-Gm6"/>
             </connections>
             <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
         </view>

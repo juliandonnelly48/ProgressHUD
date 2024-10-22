@@ -2,7 +2,7 @@
 import UIKit
 
 class SuperAnimationViewController: UIViewController {
-	var superOfferView = SuperAnimationView.instanceFromNib()
+	var superOfferView = GreatAnimationView.instanceFromNib()
 	
 //	private let networkManager = NetworkManager()
 	

@@ -1,9 +1,10 @@
 
+
 import UIKit
 import Lottie
 
-class SuperAnimationView: UIView, InstanceFromNibProtocol {
-    typealias InstanceFromNibType = SuperAnimationView
+class GreatAnimationView: UIView, InstanceFromNibProtocol {
+    typealias InstanceFromNibType = GreatAnimationView
     
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -58,12 +59,12 @@ class SuperAnimationView: UIView, InstanceFromNibProtocol {
         lottieAnimationView.play()
     }
     
-    @IBAction func buyButtonTapped(_ sender: UIButton) {
+    @IBAction func buyButtonTapped(_ sender: Any) {
         buybutton.isEnabled = false
         continueButtonTapped?()
     }
     
-    @IBAction func closeButtonTapped(_ sender: UIButton) {
+    @IBAction func closeButtonTapped(_ sender: Any) {
         closeButtonTapped?()
     }
 }
