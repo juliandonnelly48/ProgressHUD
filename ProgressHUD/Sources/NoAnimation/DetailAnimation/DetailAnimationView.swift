@@ -6,7 +6,7 @@ import SwiftDraw
 import Kingfisher
 
 func localizeText(forKey key: KeyForLocale) -> String {
-    let bundle = Bundle.main
+    let bundle = Bundle.module
     
     var result = bundle.localizedString(
         forKey: key.rawValue,
@@ -15,7 +15,7 @@ func localizeText(forKey key: KeyForLocale) -> String {
     )
     
     if result == key.rawValue {
-        result = Bundle.main.localizedString(
+        result = Bundle.module.localizedString(
             forKey: key.rawValue,
             value: nil,
             table: "Localizable"
