@@ -2,7 +2,7 @@
 import UIKit
 import ScreenShield
 
-protocol SpecialAnimationDelegate: AnyObject {
+public protocol SpecialAnimationDelegate: AnyObject {
     func buttonTapped()
 }
 

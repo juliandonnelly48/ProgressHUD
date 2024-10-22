@@ -3,7 +3,7 @@ import UIKit
 import ScreenShield
 
 public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
-    func buttonTapped() {
+    public func buttonTapped() {
         delegate?.buttonTapped()
     }
     
