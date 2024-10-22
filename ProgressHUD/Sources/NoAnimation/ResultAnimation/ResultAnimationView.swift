@@ -90,6 +90,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     }
     
     func setup(with model: DataOfferObjectLib?, isTarifPaidAndActive: Bool) {
+        self.isTarifPaidAndActive = isTarifPaidAndActive
         self.model = model
         bannerView.setup(with: model, isPaid: isTarifPaidAndActive)
         backgroundColor = .white
