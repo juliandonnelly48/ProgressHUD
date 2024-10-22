@@ -12,7 +12,7 @@ class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dimView: UIView!
     
-    private var model: DataOfferObject?
+    private var model: DataOfferObjectLib?
     
     var continueButtonTapped: (() -> Void)?
     var timer: Timer?
@@ -40,7 +40,7 @@ class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
         titleLabel.text = String(format: model?.settingsTitle ?? "", "\(index)")
     }
     
-    func setup(with model: DataOfferObject?) {
+    func setup(with model: DataOfferObjectLib?) {
         self.model = model
         
         

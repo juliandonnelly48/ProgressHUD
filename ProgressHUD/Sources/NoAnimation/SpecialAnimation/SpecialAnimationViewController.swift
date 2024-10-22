@@ -14,7 +14,7 @@ public class SpecialAnimationViewController: UIViewController {
 
     weak var delegate: SpecialAnimationDelegate?
     
-    public init(_ model: DataOfferObject? = nil, price: String ,delegate: SpecialAnimationDelegate) {
+    public init(_ model: DataOfferObjectLib? = nil, price: String ,delegate: SpecialAnimationDelegate) {
         self.delegate = delegate
         self.price = price
         

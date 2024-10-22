@@ -68,11 +68,11 @@ public class SpecialAnimationThreeViewController: UIViewController {
         return button
     }()
     
-    private let model: DataOfferObject?
+    private let model: DataOfferObjectLib?
 //    private let networkManager = NetworkManager()
     weak var delegate: SpecialAnimationDelegate?
     
-    public init(_ model: DataOfferObject? = nil, delegate: SpecialAnimationDelegate) {
+    public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         

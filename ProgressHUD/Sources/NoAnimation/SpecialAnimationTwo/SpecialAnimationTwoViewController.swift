@@ -32,7 +32,7 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
     
     private let specialOfferTwoView = SpecialAnimationTwo.instanceFromNib()
     private var data: [LogEntry] = []
-    private let model: DataOfferObject?
+    private let model: DataOfferObjectLib?
     private var index = 0
 //    private let networkManager = NetworkManager()
 
@@ -40,7 +40,7 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
     var dismissed: (() -> ())?
     
     
-    public init(_ model: DataOfferObject? = nil, delegate: SpecialAnimationDelegate) {
+    public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         

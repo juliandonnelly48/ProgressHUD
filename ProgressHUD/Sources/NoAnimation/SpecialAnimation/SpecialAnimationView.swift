@@ -37,7 +37,7 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
     var closeButtonTapped: (() -> Void)?
     var restoreButtonTapped: (() -> Void)?
     
-    var model: DataOfferObject? {
+    var model: DataOfferObjectLib? {
         didSet {
             guard let model else { return }
             

@@ -56,7 +56,7 @@ class BottomAnimationView: UIView {
     }()
     
     var buttonTapped: (() -> ())?
-    var model: DataOfferObject? {
+    var model: DataOfferObjectLib? {
         didSet {
             titleLabel.text = model?.objectTwo?.description.title
             subtitleLabel.text = model?.objectTwo?.description.subtitle

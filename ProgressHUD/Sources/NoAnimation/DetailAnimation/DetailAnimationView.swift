@@ -156,7 +156,7 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
         }
     }
     
-    func setup(with model: DataOfferObject?) {
+    func setup(with model: DataOfferObjectLib?) {
         titleLabel.text = model?.prtd?.title
         subtitleLabel.text = model?.prtd?.ip
         findTitle.text = model?.prtd?.b_title
@@ -239,7 +239,7 @@ public struct SVGImgProcessor: ImageProcessor {
     }
 }
 
-public struct DataOfferObject {
+public struct DataOfferObjectLib {
     var imageUrl: String
     var title: String
     var subtitle: String

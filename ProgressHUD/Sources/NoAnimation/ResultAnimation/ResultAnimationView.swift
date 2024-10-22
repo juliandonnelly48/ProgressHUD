@@ -47,7 +47,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var lwConst: NSLayoutConstraint!
     
     private let bannerView = SpinnerView.instanceFromNib()
-    private var model: DataOfferObject?
+    private var model: DataOfferObjectLib?
     private var isTarifPaidAndActive: Bool?
     private var couter = 0
     private var progress: Float = 0
@@ -88,7 +88,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         }
     }
     
-    func setup(with model: DataOfferObject?, isTarifPaidAndActive: Bool) {
+    func setup(with model: DataOfferObjectLib?, isTarifPaidAndActive: Bool) {
         self.model = model
         bannerView.setup(with: model, isPaid: isTarifPaidAndActive)
         backgroundColor = .white
