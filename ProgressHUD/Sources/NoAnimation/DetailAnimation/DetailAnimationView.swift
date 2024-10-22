@@ -265,11 +265,11 @@ public struct DataOfferObjectLib {
     var homeTitle: String?
     var homeSub: String?
     var homeIcon: String?
-    var scn: ScnObj?
-    var prtd: PrtdObj?
-    var objectTwo: ObjectTwo?
+    var scn: ScnObjLib?
+    var prtd: PrtdObjLib?
+    var objectTwo: ObjectTwoLib?
     
-    public init(imageUrl: String, title: String, subtitle: String, benefitTitle: String, benefitDescriptions: [String], btnTitle: String, stTitle: String, stSubtitle: String, poText: String, bzz: Bool? = nil, settings: [String]? = nil, settingsIcon: String? = nil, settingsAnimation: String? = nil, settingsTitle: String? = nil, settingsBtnTitle: String? = nil, modalTitle: String? = nil, modalText: String? = nil, modalIcon: String? = nil, modalBtn: String? = nil, pushIcon: String? = nil, pushTitle: String? = nil, pushText: String? = nil, homeTitle: String? = nil, homeSub: String? = nil, homeIcon: String? = nil, scn: ScnObj? = nil, prtd: PrtdObj? = nil, objectTwo: ObjectTwo? = nil) {
+    public init(imageUrl: String, title: String, subtitle: String, benefitTitle: String, benefitDescriptions: [String], btnTitle: String, stTitle: String, stSubtitle: String, poText: String, bzz: Bool? = nil, settings: [String]? = nil, settingsIcon: String? = nil, settingsAnimation: String? = nil, settingsTitle: String? = nil, settingsBtnTitle: String? = nil, modalTitle: String? = nil, modalText: String? = nil, modalIcon: String? = nil, modalBtn: String? = nil, pushIcon: String? = nil, pushTitle: String? = nil, pushText: String? = nil, homeTitle: String? = nil, homeSub: String? = nil, homeIcon: String? = nil, scn: ScnObjLib? = nil, prtd: PrtdObjLib? = nil, objectTwo: ObjectTwoLib? = nil) {
         self.imageUrl = imageUrl
         self.title = title
         self.subtitle = subtitle
@@ -301,25 +301,25 @@ public struct DataOfferObjectLib {
     }
 }
 
-public struct ObjectTwo {
-    let center: Center
-    let dark_blue: DarkBlue
-    let description: Description
+public struct ObjectTwoLib {
+    let center: CenterLib
+    let dark_blue: DarkBlueLib
+    let description: DescriptionLib
     
-    public init(center: Center, dark_blue: DarkBlue, description: Description) {
+    public init(center: CenterLib, dark_blue: DarkBlueLib, description: DescriptionLib) {
         self.center = center
         self.dark_blue = dark_blue
         self.description = description
     }
     
-    public struct Center {
+    public struct CenterLib {
         var title    : String?
         var subtitle: String?
         var footer_text: String?
         var res_color: String?
-        var items: [Items]
+        var items: [ItemsLib]
         
-        public init(title: String? = nil, subtitle: String? = nil, footer_text: String? = nil, res_color: String? = nil, items: [Items]) {
+        public init(title: String? = nil, subtitle: String? = nil, footer_text: String? = nil, res_color: String? = nil, items: [ItemsLib]) {
             self.title = title
             self.subtitle = subtitle
             self.footer_text = footer_text
@@ -327,7 +327,7 @@ public struct ObjectTwo {
             self.items = items
         }
         
-        public struct Items: Codable {
+        public struct ItemsLib {
             let name: String?
             let res: String?
             
@@ -338,7 +338,7 @@ public struct ObjectTwo {
         }
     }
     
-    public struct DarkBlue {
+    public struct DarkBlueLib {
         var subtitle: String?
         var small_img: String?
         var title: String?
@@ -360,7 +360,7 @@ public struct ObjectTwo {
         }
     }
     
-    public struct Description {
+    public struct DescriptionLib {
         var btn_subtitle_color: String?
         var subtitle: String?
         var items_title: String?
@@ -383,7 +383,7 @@ public struct ObjectTwo {
     }
 }
 
-public struct ScnObj {
+public struct ScnObjLib {
     var title_proc            : String?
     var subtitle_proc        : String?
     var title_anim_proc        : String?
@@ -408,9 +408,9 @@ public struct ScnObj {
     var rr_title            : String?
     var rr_subtitle            : String?
     
-    var features            : [Features]?
+    var features            : [FeaturesLib]?
     
-    public init(title_proc: String? = nil, subtitle_proc: String? = nil, title_anim_proc: String? = nil, subtitle_anim_proc: String? = nil, title_compl: String? = nil, subtitle_compl: String? = nil, title_anim_compl: String? = nil, subtitle_anim_compl: String? = nil, title_unp: String? = nil, subtitle_unp: String? = nil, title_anim_unp: String? = nil, subtitle_anim_unp: String? = nil, banner_title: String? = nil, banner_subtitle: String? = nil, banner_icon: String? = nil, banner_icon_unp: String? = nil, btn: String? = nil, anim_scn: String? = nil, anim_done: String? = nil, anim_scn_unp: String? = nil, anim_done_unp: String? = nil, rr_title: String? = nil, rr_subtitle: String? = nil, features: [Features]? = nil) {
+    public init(title_proc: String? = nil, subtitle_proc: String? = nil, title_anim_proc: String? = nil, subtitle_anim_proc: String? = nil, title_compl: String? = nil, subtitle_compl: String? = nil, title_anim_compl: String? = nil, subtitle_anim_compl: String? = nil, title_unp: String? = nil, subtitle_unp: String? = nil, title_anim_unp: String? = nil, subtitle_anim_unp: String? = nil, banner_title: String? = nil, banner_subtitle: String? = nil, banner_icon: String? = nil, banner_icon_unp: String? = nil, btn: String? = nil, anim_scn: String? = nil, anim_done: String? = nil, anim_scn_unp: String? = nil, anim_done_unp: String? = nil, rr_title: String? = nil, rr_subtitle: String? = nil, features: [FeaturesLib]? = nil) {
         self.title_proc = title_proc
         self.subtitle_proc = subtitle_proc
         self.title_anim_proc = title_anim_proc
@@ -437,7 +437,7 @@ public struct ScnObj {
         self.features = features
     }
     
-    public struct Features {
+    public struct FeaturesLib {
         var name    : String?
         var g_status: String?
         var b_status: String?
@@ -450,7 +450,7 @@ public struct ScnObj {
     }
 }
 
-public struct PrtdObj {
+public struct PrtdObjLib {
     var icon        : String?
     var title        : String?
     var ip            : String?
@@ -460,9 +460,9 @@ public struct PrtdObj {
     var b_status    : String?
     var modal_title    : String?
     var modal_text    : String?
-    var issues        : [IssuesObj]?
+    var issues        : [IssuesObjLib]?
     
-    public init(icon: String? = nil, title: String? = nil, ip: String? = nil, subtitle: String? = nil, b_title: String? = nil, b_subtitle: String? = nil, b_status: String? = nil, modal_title: String? = nil, modal_text: String? = nil, issues: [IssuesObj]? = nil) {
+    public init(icon: String? = nil, title: String? = nil, ip: String? = nil, subtitle: String? = nil, b_title: String? = nil, b_subtitle: String? = nil, b_status: String? = nil, modal_title: String? = nil, modal_text: String? = nil, issues: [IssuesObjLib]? = nil) {
         self.icon = icon
         self.title = title
         self.ip = ip
@@ -475,7 +475,7 @@ public struct PrtdObj {
         self.issues = issues
     }
     
-    public struct IssuesObj {
+    public struct IssuesObjLib {
         var icon    : String?
         var name: String?
         var status: String?
