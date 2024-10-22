@@ -7,50 +7,11 @@ class SuperAnimationView: UIView, InstanceFromNibProtocol {
     
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var cancellabel: UILabel!
-    
-    @IBOutlet weak var lottieAnimationView: UIView! {
-        didSet {
-            let anView = LottieAnimationView()
-            lottieAnimationView.addSubview(anView)
-            anView.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-            }
-            anView.animation = LottieAnimation.named("superAnimation")
-            anView.loopMode = .autoReverse
-            anView.contentMode = .scaleAspectFill
-            anView.backgroundBehavior = .pauseAndRestore
-            anView.backgroundColor = .clear
-            anView.play()
-        }
-    }
-    
-    @IBOutlet weak var infoview: UIView! {
-        didSet {
-            infoview.applyGradient(
-                isVertical: false,
-                colorArray: [
-                    UIColor().hexStringToUIColor(hex: "#FFD39E"),
-                    UIColor().hexStringToUIColor(hex: "#FF9B43"),
-                    UIColor().hexStringToUIColor(hex: "#FFC49D"),
-                    UIColor().hexStringToUIColor(hex: "#F86C1E")
-                ]
-            )
-        }
-    }
-    
-    @IBOutlet weak var buybutton: GradientButton! {
-        didSet {
-            buybutton.cornerRadius = 20
-            buybutton.startColor = UIColor().hexStringToUIColor(hex: "#687EF8")
-            buybutton.endColor = UIColor().hexStringToUIColor(hex: "#6227CA")
-            buybutton.startPoint = CGPoint(x: 0, y: 0)
-            buybutton.endPoint = CGPoint(x: 1, y: 1)
-            buybutton.setTitle(localizeText(forKey: .subsBuy), for: .normal)
-        }
-    }
-    
+    @IBOutlet weak var lottieAnimationView: LottieAnimationView!
     @IBOutlet weak var pricelabel: UILabel!
+    @IBOutlet weak var buybutton: GradientButton!
+    @IBOutlet weak var cancellabel: UILabel!
+    @IBOutlet weak var infoview: UIView!
     
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
     
@@ -71,6 +32,30 @@ class SuperAnimationView: UIView, InstanceFromNibProtocol {
         titlelabel.text = localizeText(forKey: .subsTitle)
         subtitleLabel.text = localizeText(forKey: .subsSub)
         cancellabel.text = localizeText(forKey: .subsCancel)
+        
+        buybutton.cornerRadius = 20
+        buybutton.startColor = UIColor().hexStringToUIColor(hex: "#687EF8")
+        buybutton.endColor = UIColor().hexStringToUIColor(hex: "#6227CA")
+        buybutton.startPoint = CGPoint(x: 0, y: 0)
+        buybutton.endPoint = CGPoint(x: 1, y: 1)
+        buybutton.setTitle(localizeText(forKey: .subsBuy), for: .normal)
+        
+        infoview.applyGradient(
+            isVertical: false,
+            colorArray: [
+                UIColor().hexStringToUIColor(hex: "#FFD39E"),
+                UIColor().hexStringToUIColor(hex: "#FF9B43"),
+                UIColor().hexStringToUIColor(hex: "#FFC49D"),
+                UIColor().hexStringToUIColor(hex: "#F86C1E")
+            ]
+        )
+    
+        lottieAnimationView.animation = LottieAnimation.named("superAnimation")
+        lottieAnimationView.loopMode = .autoReverse
+        lottieAnimationView.contentMode = .scaleAspectFill
+        lottieAnimationView.backgroundBehavior = .pauseAndRestore
+        lottieAnimationView.backgroundColor = .clear
+        lottieAnimationView.play()
     }
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {

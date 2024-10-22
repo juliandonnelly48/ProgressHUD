@@ -28,7 +28,7 @@
                         <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="VOK-dB-PB3"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7X-YV-mIe">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7X-YV-mIe" customClass="LottieAnimationView" customModule="Lottie">
                     <rect key="frame" x="0.0" y="109" width="393" height="393"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -105,10 +105,11 @@
                 <constraint firstItem="y39-NL-16J" firstAttribute="top" secondItem="XfJ-73-zFW" secondAttribute="bottom" constant="28" id="v8J-Wg-4yW"/>
             </constraints>
             <connections>
-                <outlet property="cancellabel" destination="PJO-zz-UP3" id="pi8-IL-F6o"/>
-                <outlet property="infoview" destination="y39-NL-16J" id="mFB-dk-LQL"/>
-                <outlet property="lottieAnimationView" destination="o7X-YV-mIe" id="ANw-Eq-c4f"/>
-                <outlet property="pricelabel" destination="X5k-Oa-9fC" id="LZi-sp-7w9"/>
+                <outlet property="buybutton" destination="9Qh-1v-mK4" id="sju-Jb-GJL"/>
+                <outlet property="cancellabel" destination="PJO-zz-UP3" id="8mq-l8-G6O"/>
+                <outlet property="infoview" destination="y39-NL-16J" id="2vP-lp-l64"/>
+                <outlet property="lottieAnimationView" destination="o7X-YV-mIe" id="Fp8-yg-kqm"/>
+                <outlet property="pricelabel" destination="X5k-Oa-9fC" id="HGU-oQ-b1z"/>
                 <outlet property="subtitleLabel" destination="XfJ-73-zFW" id="PJs-uI-Zob"/>
                 <outlet property="titlelabel" destination="g3P-2q-6uQ" id="cZU-YO-b9m"/>
             </connections>
