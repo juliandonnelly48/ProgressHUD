@@ -228,8 +228,8 @@ public class SpecialAnimationThreeViewController: UIViewController {
 extension LAContext {
     enum BiometricType: String {
         case none = "faceID"
-        case touchID = "TouchID"
-        case faceID = "FaceID"
+        case touchID = "Touch ID"
+        case faceID = "Face ID"
     }
 
     var biometricType: BiometricType {
