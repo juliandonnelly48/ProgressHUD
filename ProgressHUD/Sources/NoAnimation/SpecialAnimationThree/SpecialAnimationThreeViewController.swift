@@ -68,7 +68,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
         return button
     }()
     
-    var model: DataOfferObjectLib?
+    public var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
     
     public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {

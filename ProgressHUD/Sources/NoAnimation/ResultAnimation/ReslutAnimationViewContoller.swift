@@ -8,8 +8,8 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
     }
     
     private let resultView = ResultAnimationView.instanceFromNib()
-    private let model: DataOfferObjectLib?
-    var isPaid: Bool
+    public var model: DataOfferObjectLib?
+    public var isPaid: Bool
 
     weak var delegate: SpecialAnimationDelegate?
     

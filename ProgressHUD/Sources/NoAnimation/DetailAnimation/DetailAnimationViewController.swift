@@ -6,7 +6,7 @@ import ScreenShield
 class DetailAnimationViewController: UIViewController {
     private let detailInformView = DetailAnimationView.instanceFromNib()
     
-    var model: DataOfferObjectLib?
+    public var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
     
     init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {

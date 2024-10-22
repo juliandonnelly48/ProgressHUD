@@ -8,9 +8,9 @@ public class SpecialAnimationViewController: UIViewController {
         SpecialAnimationView.instanceFromNib()
     }()
     
-    var price: String
+    public var price: String
     var dismissed: (() -> ())?
-    var model: DataOfferObjectLib?
+    public var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
     
     public init(_ model: DataOfferObjectLib? = nil, price: String ,delegate: SpecialAnimationDelegate) {
