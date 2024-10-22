@@ -13,13 +13,7 @@ public class SpecialAnimationFourViewController: UIViewController {
     private let topLabel = UILabel()
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let bottomView = BottomAnimationView()
-    private var data: [(String, String)] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    private var data: [(String, String)] = []
     
     public var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
@@ -39,6 +33,7 @@ public class SpecialAnimationFourViewController: UIViewController {
         super.viewDidLoad()
         
         let dataSource = model?.objectTwo?.center.items.map({ ($0.name ?? "", $0.res ?? "") }) ?? []
+        
         data = dataSource
         bottomView.model = self.model
         setupUI()
