@@ -38,7 +38,8 @@ public class SpecialAnimationFourViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        data = model?.objectTwo?.center.items.map({ ($0.name ?? "", $0.res ?? "") }) ?? []
+        let dataSource = model?.objectTwo?.center.items.map({ ($0.name ?? "", $0.res ?? "") }) ?? []
+        data = dataSource
         bottomView.model = self.model
         setupUI()
         setConstraints()

@@ -221,7 +221,6 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func buyButtonTapped(_ sender: Any) {
-        alertButton.isEnabled = false
         continueButtonTapped?()
     }
 }

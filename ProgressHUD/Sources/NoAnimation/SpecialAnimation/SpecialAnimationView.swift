@@ -70,7 +70,6 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
     }
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {
-        buyButton.isEnabled = false
         continueButtonTapped?()
     }
     
