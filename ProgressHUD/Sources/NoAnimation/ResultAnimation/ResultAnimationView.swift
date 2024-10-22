@@ -11,8 +11,13 @@ protocol InstanceFromNibProtocol {
 
 extension InstanceFromNibProtocol {
     static func instanceFromNib() -> InstanceFromNibType {
-        let nibName = InstanceFromNibType.className
-        return UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! InstanceFromNibType
+        let loadedNib = Bundle.module.loadNibNamed(InstanceFromNibType.className, owner: self, options: nil)
+
+//        guard let contentView = loadedNib?.first as? UIView else {
+//           return nil
+//        }
+//        let nibName = InstanceFromNibType.className
+        return loadedNib?.first as! InstanceFromNibType//UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! InstanceFromNibType
     }
 }
 
