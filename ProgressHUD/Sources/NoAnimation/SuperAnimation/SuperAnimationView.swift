@@ -74,7 +74,7 @@ class SuperAnimationView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func buyButtonTapped(_ sender: UIButton) {
-        buybutton.isEnabled = false
+//        buybutton.isEnabled = false
         continueButtonTapped?()
     }
     
