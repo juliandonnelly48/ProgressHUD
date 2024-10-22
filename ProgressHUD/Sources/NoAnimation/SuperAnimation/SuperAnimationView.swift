@@ -9,14 +9,19 @@ class SuperAnimationView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitlelabel: UILabel!
     @IBOutlet weak var cancelLabel: UILabel!
-    @IBOutlet weak var animationView: LottieAnimationView! {
+    @IBOutlet weak var animationView: UIView! {
 		didSet {
-			animationView.animation = LottieAnimation.named("superAnimation")
-			animationView.loopMode = .autoReverse
-			animationView.contentMode = .scaleAspectFill
-			animationView.backgroundBehavior = .pauseAndRestore
-			animationView.backgroundColor = .clear
-			animationView.play()
+            let anView = LottieAnimationView()
+            animationView.addSubview(anView)
+            anView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            anView.animation = LottieAnimation.named("superAnimation")
+            anView.loopMode = .autoReverse
+            anView.contentMode = .scaleAspectFill
+            anView.backgroundBehavior = .pauseAndRestore
+            anView.backgroundColor = .clear
+            anView.play()
 		}
 	}
 	
