@@ -97,7 +97,7 @@ public class SpecialAnimationFourViewController: UIViewController {
         }
         
         topLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(0)
+            make.top.equalToSuperview().offset(10)
             make.leading.trailing.equalToSuperview()
         }
                 
