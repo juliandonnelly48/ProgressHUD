@@ -68,9 +68,9 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         
         if isSmallDevice {
             topConst.constant = 20
-            lhConst.constant = 250
-            lwConst.constant = 250
-            inactiveImageView.contentMode = .scaleToFill
+//            lhConst.constant = 250
+//            lwConst.constant = 250
+//            inactiveImageView.contentMode = .scaleToFill
             titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
             subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
             
