@@ -102,7 +102,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium)
                 ])
-                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOn).uppercased(), attributes: [
+                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)
                 ])
@@ -137,7 +137,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 animationTitle.text = model?.scn?.title_anim_unp
                 subtitleLabel.text = model?.scn?.subtitle_unp
                 iconImageView.image = UIImage(resource: .inVector)
-                titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsOff))
+                titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsDis))
                 animationSubtitle.attributedText = attributedStrOne
             }
             
@@ -163,7 +163,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             attributedStrOne.append(attributedStrTwo)
             
             circularProgress.isHidden = true
-            titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsOff))
+            titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsDis))
             subtitleLabel.text = model?.scn?.subtitle_unp
             animationTitle.text = model?.scn?.title_anim_unp
             animationSubtitle.attributedText = attributedStrOne

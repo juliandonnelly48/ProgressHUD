@@ -34,6 +34,8 @@ enum KeyForLocale: String  {
     case subsSub
     case subsCancel
     case subsBuy
+    case subsDis
+    case subsActive
 }
 
 class DetailAnimationView: UIView, InstanceFromNibProtocol {

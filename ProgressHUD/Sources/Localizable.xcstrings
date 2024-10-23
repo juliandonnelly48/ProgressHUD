@@ -9,6 +9,41 @@
             "state" : "translated",
             "value" : "now"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ahora"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "עַכשָׁיו"
+          }
+        }
+      }
+    },
+    "subsActive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activo"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "פָּעִיל"
+          }
         }
       }
     },
@@ -18,19 +53,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grab 3-Days Free Trial"
+            "value" : "Start 3-Day Free Trial"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Obtén 3 días de prueba gratis"
+            "value" : "Comience una prueba gratuita de 3 días"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "קבל 3 ימי ניסיון חינם"
+            "value" : "התחל ניסיון חינם ל-3 ימים"
           }
         }
       }
@@ -54,6 +89,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ניתן לבטל בכל עת"
+          }
+        }
+      }
+    },
+    "subsDis" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivado"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "נָכֶה"
           }
         }
       }
@@ -110,19 +168,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "3-days free trial, then only %@/week"
+            "value" : "Free for 3 days, then %@/week"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "3 días de prueba gratis, luego solo %@/semana"
+            "value" : "Gratis por 3 días, luego %@/semana"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "3 ימי ניסיון חינם, לאחר מכן רק %@ לשבוע"
+            "value" : "חינם למשך 3 ימים, ולאחר מכן %@/שבוע"
           }
         }
       }
@@ -133,19 +191,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Upgrade now and explore secured connection with no data leakage!"
+            "value" : "Upgrade now for secure browsing with no data leaks."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "¡Actualiza ahora y explora una conexión segura sin filtración de datos!"
+            "value" : "Actualice ahora para una navegación segura sin fugas de datos."
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "שדרג עכשיו וחקור חיבור מאובטח ללא דליפות נתונים!"
+            "value" : "שדרג עכשיו לגלישה מאובטחת ללא דליפות נתונים."
           }
         }
       }
@@ -156,19 +214,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exclusive one-time offer"
+            "value" : "Exclusive Offer!"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Oferta exclusiva de una sola vez"
+            "value" : "Oferta exclusiva!"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "הצעה בלעדית חד פעמית"
+            "value" : "הצעה בלעדית!"
           }
         }
       }
