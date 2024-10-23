@@ -98,11 +98,21 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         
         if isTarifPaidAndActive {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {
+                let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.title_compl?.dropLast(2) ?? ""), attributes: [
+                    NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium)
+                ])
+                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOn).uppercased(), attributes: [
+                    NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .medium)
+                ])
+                attributedStrOne.append(attributedStrTwo)
+                
                 inactiveImageView.isHidden = true
                 subtitleLabel.text = model?.scn?.subtitle_compl
                 iconImageView.image = UIImage(resource: .vector)
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsOn))
-                animationSubtitle.text = String(format: model?.scn?.subtitle_anim_compl ?? "", localizeText(forKey: .subsOn))
+                animationSubtitle.attributedText = attributedStrOne
                 animationTitle.text = model?.scn?.title_anim_compl
                 
                 guard let url = URL(string: model?.scn?.anim_done ?? "") else { return }
@@ -113,12 +123,22 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                     self?.animationView.play()
                 }, animationCache: DefaultAnimationCache.sharedCache)
             } else {
+                let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.title_compl?.dropLast(2) ?? ""), attributes: [
+                    NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium)
+                ])
+                let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
+                    NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .medium)
+                ])
+                attributedStrOne.append(attributedStrTwo)
+                
                 inactiveImageView.isHidden = false
                 animationTitle.text = model?.scn?.title_anim_unp
                 subtitleLabel.text = model?.scn?.subtitle_unp
                 iconImageView.image = UIImage(resource: .inVector)
                 titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsOff))
-                animationSubtitle.text = String(format: model?.scn?.subtitle_anim_compl ?? "", localizeText(forKey: .subsOff))
+                animationSubtitle.attributedText = attributedStrOne
             }
             
             circularProgress.isHidden = false
@@ -132,11 +152,21 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 }
             }
         } else {
+            let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.title_compl?.dropLast(2) ?? ""), attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium)
+            ])
+            let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .medium)
+            ])
+            attributedStrOne.append(attributedStrTwo)
+            
             circularProgress.isHidden = true
             titleLabel.text = String(format: model?.scn?.title_compl ?? "", localizeText(forKey: .subsOff))
             subtitleLabel.text = model?.scn?.subtitle_unp
             animationTitle.text = model?.scn?.title_anim_unp
-            animationSubtitle.text = String(format: model?.scn?.subtitle_anim_compl ?? "", localizeText(forKey: .subsOff))
+            animationSubtitle.attributedText = attributedStrOne
             animationView.isHidden = true
             inactiveImageView.isHidden = false
             iconImageView.image = UIImage(resource: .inVector)

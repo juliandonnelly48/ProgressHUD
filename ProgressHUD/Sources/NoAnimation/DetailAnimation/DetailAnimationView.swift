@@ -167,7 +167,7 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
         pushSubtitle.text = model?.pushText
         alertTitle.text = model?.modalTitle
         alertSubtitle.text = model?.modalText
-        alertButton.setTitle(model?.modalBtn?.uppercased(), for: .normal)
+        alertButton.setTitle(model?.modalBtn, for: .normal)
         
         model?.prtd?.issues?.enumerated().forEach({ index, issue in
             switch index {

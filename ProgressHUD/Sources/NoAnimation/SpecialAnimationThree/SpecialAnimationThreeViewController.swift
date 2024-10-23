@@ -130,7 +130,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
         hStack.addArrangedSubview(lowImageIconView)
         hStack.addArrangedSubview(lowLabel)
         
-        actionButton.setTitle(model?.objectTwo?.dark_blue.btn_title?.uppercased(), for: .normal)
+        actionButton.setTitle(model?.objectTwo?.dark_blue.btn_title, for: .normal)
         actionButton.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
         
         view.addSubview(topImageView)
