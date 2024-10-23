@@ -73,6 +73,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             inactiveImageView.contentMode = .scaleToFill
             titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
             subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            
+            layoutIfNeeded()
         }
         
         bannerContainer.addSubview(bannerView)
