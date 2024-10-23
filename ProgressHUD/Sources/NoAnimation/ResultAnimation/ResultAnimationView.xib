@@ -103,16 +103,19 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="animTop" destination="zuQ-mp-9gN" id="QC3-77-OVc"/>
                 <outlet property="animationSubtitle" destination="Mlp-3O-fR6" id="KWE-Ue-vmV"/>
                 <outlet property="animationTitle" destination="Xnu-zf-oRp" id="JBK-kH-jea"/>
                 <outlet property="animationView" destination="i8c-U7-kK8" id="ZJ1-dW-BLy"/>
                 <outlet property="bannerContainer" destination="RXz-fu-YBY" id="NDp-HH-pA9"/>
+                <outlet property="bannerTop" destination="ecC-ik-vKs" id="Osk-NG-Nr5"/>
                 <outlet property="circularProgress" destination="ceT-sZ-e7r" id="xzA-3L-6o4"/>
                 <outlet property="iconImageView" destination="3Ma-cT-GRx" id="dDY-1V-vdm"/>
                 <outlet property="inactiveImageView" destination="M8q-mZ-RbB" id="cfN-1M-xRJ"/>
                 <outlet property="lhConst" destination="dFZ-GC-sOD" id="ktY-lk-QCY"/>
                 <outlet property="lwConst" destination="Gcl-wW-fii" id="SDd-iI-EPH"/>
                 <outlet property="stackView" destination="wJq-4S-dDt" id="O5b-Ef-gLl"/>
+                <outlet property="subTop" destination="ucn-eN-hzy" id="LmM-ZG-RpB"/>
                 <outlet property="subtitleLabel" destination="db2-Td-X2z" id="ed5-Ty-OZB"/>
                 <outlet property="titleLabel" destination="qyD-kd-KVg" id="Spu-MH-uJu"/>
                 <outlet property="topConst" destination="Blo-sC-pgJ" id="1YP-5h-BqV"/>

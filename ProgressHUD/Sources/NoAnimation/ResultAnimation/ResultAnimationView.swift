@@ -46,6 +46,9 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     
     @IBOutlet weak var lhConst: NSLayoutConstraint!
     @IBOutlet weak var lwConst: NSLayoutConstraint!
+    @IBOutlet weak var subTop: NSLayoutConstraint!
+    @IBOutlet weak var animTop: NSLayoutConstraint!
+    @IBOutlet weak var bannerTop: NSLayoutConstraint!
     
     private let bannerView = SpinnerView.instanceFromNib()
     private var model: DataOfferObjectLib?
@@ -67,7 +70,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         super.awakeFromNib()
         
         if isSmallDevice {
-            topConst.constant = 20
+            topConst.constant = 15
+            subTop.constant = 10
+            animTop.constant = 5
+            bannerTop.constant = 5
 //            lhConst.constant = 250
 //            lwConst.constant = 250
 //            inactiveImageView.contentMode = .scaleToFill
