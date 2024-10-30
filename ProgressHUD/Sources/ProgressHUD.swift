@@ -67,7 +67,7 @@ public class ProgressHUD: UIView {
 	let orientationDidChange	= UIDevice.orientationDidChangeNotification
 
     var isShow = true
-	static let shared = ProgressHUD()
+	public static let shared = ProgressHUD()
 
 	convenience private init() {
 		self.init(frame: UIScreen.main.bounds)
