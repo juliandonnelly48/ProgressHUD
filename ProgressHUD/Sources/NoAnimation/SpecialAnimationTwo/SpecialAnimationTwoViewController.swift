@@ -87,10 +87,12 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
             }
         })
         
-        ScreenShield.shared.protect(view: self.specialOfferTwoView.tableView)
-        ScreenShield.shared.protect(view: self.specialOfferTwoView.iconImageView)
-        ScreenShield.shared.protect(view: self.specialOfferTwoView.titleLabel)
-        ScreenShield.shared.protectFromScreenRecording()
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protect(view: self.specialOfferTwoView.tableView)
+            ScreenShield.shared.protect(view: self.specialOfferTwoView.iconImageView)
+            ScreenShield.shared.protect(view: self.specialOfferTwoView.titleLabel)
+            ScreenShield.shared.protectFromScreenRecording()
+        }
     }
     
     public override func viewWillDisappear(_ animated: Bool) {

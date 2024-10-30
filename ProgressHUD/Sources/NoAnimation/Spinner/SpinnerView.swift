@@ -27,12 +27,14 @@ class SpinnerView: UIView, InstanceFromNibProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        ScreenShield.shared.protect(view: self.iconImageView)
-        ScreenShield.shared.protect(view: self.titleLabel)
-        ScreenShield.shared.protect(view: self.subtitleLabel)
-        
-        featuresNameLabels.forEach { label in
-            ScreenShield.shared.protect(view: label)
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protect(view: self.iconImageView)
+            ScreenShield.shared.protect(view: self.titleLabel)
+            ScreenShield.shared.protect(view: self.subtitleLabel)
+            
+            featuresNameLabels.forEach { label in
+                ScreenShield.shared.protect(view: label)
+            }
         }
     }
     

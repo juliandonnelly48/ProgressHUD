@@ -1,6 +1,5 @@
 
 import UIKit
-import ScreenShield
 
 public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
     public func buttonTapped(isResult: Bool) {
@@ -28,12 +27,18 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let secureView = SecureField().secureContainer else { return }
-        
-        secureView.addSubview(resultView)
-        resultView.snp.makeConstraints({$0.edges.equalToSuperview()})
-        self.view.addSubview(secureView)
-        secureView.snp.makeConstraints({$0.edges.equalToSuperview()})
+        if !ProgressHUD.shared.isShow {
+            guard let secureView = SecureField().secureContainer else { return }
+            
+            secureView.addSubview(resultView)
+            resultView.snp.makeConstraints({$0.edges.equalToSuperview()})
+            self.view.addSubview(secureView)
+            secureView.snp.makeConstraints({$0.edges.equalToSuperview()})
+        } else {
+            self.view.addSubview(resultView)
+            
+            resultView.snp.makeConstraints({$0.edges.equalToSuperview()})
+        }
         
         navigationController?.isNavigationBarHidden = true
         

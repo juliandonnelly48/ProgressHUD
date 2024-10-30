@@ -34,8 +34,10 @@ public class SpecialAnimationViewController: UIViewController {
         
         self.offerView.model = model
         
-        ScreenShield.shared.protect(view: self.view)
-        ScreenShield.shared.protectFromScreenRecording()
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protect(view: self.view)
+            ScreenShield.shared.protectFromScreenRecording()
+        }
         
         bindToView()
         

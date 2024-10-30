@@ -75,13 +75,15 @@ class BottomAnimationView: UIView {
         
         setupView()
         
-        ScreenShield.shared.protect(view: self.iconImageView)
-        ScreenShield.shared.protect(view: self.titleLabel)
-        ScreenShield.shared.protect(view: self.subtitleLabel)
-        ScreenShield.shared.protect(view: self.linesLabel)
-        ScreenShield.shared.protect(view: self.actionButton)
-        ScreenShield.shared.protect(view: self.lineView)
-        ScreenShield.shared.protect(view: self.footerLabel)
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protect(view: self.iconImageView)
+            ScreenShield.shared.protect(view: self.titleLabel)
+            ScreenShield.shared.protect(view: self.subtitleLabel)
+            ScreenShield.shared.protect(view: self.linesLabel)
+            ScreenShield.shared.protect(view: self.actionButton)
+            ScreenShield.shared.protect(view: self.lineView)
+            ScreenShield.shared.protect(view: self.footerLabel)
+        }
     }
     
     required init?(coder: NSCoder) {

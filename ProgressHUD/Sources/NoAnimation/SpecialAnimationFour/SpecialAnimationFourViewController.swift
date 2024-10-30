@@ -43,10 +43,12 @@ public class SpecialAnimationFourViewController: UIViewController {
             self?.delegate?.buttonTapped(isResult: false)
         }
         
-        ScreenShield.shared.protect(view: self.bottomLabel)
-        ScreenShield.shared.protect(view: self.topLabel)
-        ScreenShield.shared.protect(view: self.tableView)
-        ScreenShield.shared.protectFromScreenRecording()
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protect(view: self.bottomLabel)
+            ScreenShield.shared.protect(view: self.topLabel)
+            ScreenShield.shared.protect(view: self.tableView)
+            ScreenShield.shared.protectFromScreenRecording()
+        }
     }
     
     public override func viewWillAppear(_ animated: Bool) {

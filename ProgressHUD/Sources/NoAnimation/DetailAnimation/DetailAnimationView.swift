@@ -115,20 +115,22 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
         
         featureView.layer.cornerRadius = 14
         
-        ScreenShield.shared.protect(view: self.pushTitle)
-        ScreenShield.shared.protect(view: self.pushIcon)
-        ScreenShield.shared.protect(view: self.pushSubtitle)
-        ScreenShield.shared.protect(view: self.alertIcon)
-        ScreenShield.shared.protect(view: self.alertView)
-        ScreenShield.shared.protect(view: self.alertTitle)
-        ScreenShield.shared.protect(view: self.alertButton)
-        ScreenShield.shared.protect(view: self.alertSubtitle)
-        ScreenShield.shared.protect(view: self.iconImageView)
-        ScreenShield.shared.protect(view: self.titleLabel)
-        ScreenShield.shared.protect(view: self.subtitleLabel)
-        ScreenShield.shared.protect(view: self.findView)
-        ScreenShield.shared.protect(view: self.featureView)
-        ScreenShield.shared.protect(view: self.informationlabel)
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protect(view: self.pushTitle)
+            ScreenShield.shared.protect(view: self.pushIcon)
+            ScreenShield.shared.protect(view: self.pushSubtitle)
+            ScreenShield.shared.protect(view: self.alertIcon)
+            ScreenShield.shared.protect(view: self.alertView)
+            ScreenShield.shared.protect(view: self.alertTitle)
+            ScreenShield.shared.protect(view: self.alertButton)
+            ScreenShield.shared.protect(view: self.alertSubtitle)
+            ScreenShield.shared.protect(view: self.iconImageView)
+            ScreenShield.shared.protect(view: self.titleLabel)
+            ScreenShield.shared.protect(view: self.subtitleLabel)
+            ScreenShield.shared.protect(view: self.findView)
+            ScreenShield.shared.protect(view: self.featureView)
+            ScreenShield.shared.protect(view: self.informationlabel)
+        }
     }
     
     func showAlertAndPush() {

@@ -66,6 +66,7 @@ public class ProgressHUD: UIView {
 	let keyboardDidHide			= UIResponder.keyboardDidHideNotification
 	let orientationDidChange	= UIDevice.orientationDidChangeNotification
 
+    var isShow = true
 	static let shared = ProgressHUD()
 
 	convenience private init() {

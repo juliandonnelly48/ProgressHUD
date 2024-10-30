@@ -34,8 +34,9 @@ class DetailAnimationViewController: UIViewController {
             self?.delegate?.buttonTapped(isResult: false)
         }
         
-        ScreenShield.shared.protectFromScreenRecording()
-        
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protectFromScreenRecording()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

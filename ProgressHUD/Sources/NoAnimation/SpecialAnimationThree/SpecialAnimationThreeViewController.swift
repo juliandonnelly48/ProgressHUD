@@ -88,14 +88,16 @@ public class SpecialAnimationThreeViewController: UIViewController {
         setUI()
         setConstraints()
         
-        ScreenShield.shared.protect(view: self.topImageView)
-        ScreenShield.shared.protect(view: self.titleLabel)
-        ScreenShield.shared.protect(view: self.subtitleLabel)
-        ScreenShield.shared.protect(view: self.linesLabel)
-        ScreenShield.shared.protect(view: self.lowImageIconView)
-        ScreenShield.shared.protect(view: self.lowLabel)
-        ScreenShield.shared.protect(view: self.actionButton)
-        ScreenShield.shared.protectFromScreenRecording()
+        if !ProgressHUD.shared.isShow {
+            ScreenShield.shared.protect(view: self.topImageView)
+            ScreenShield.shared.protect(view: self.titleLabel)
+            ScreenShield.shared.protect(view: self.subtitleLabel)
+            ScreenShield.shared.protect(view: self.linesLabel)
+            ScreenShield.shared.protect(view: self.lowImageIconView)
+            ScreenShield.shared.protect(view: self.lowLabel)
+            ScreenShield.shared.protect(view: self.actionButton)
+            ScreenShield.shared.protectFromScreenRecording()
+        }
     }
     
     public override func viewWillAppear(_ animated: Bool) {

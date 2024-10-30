@@ -74,9 +74,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             subTop.constant = 10
             animTop.constant = 5
             bannerTop.constant = 5
-//            lhConst.constant = 250
-//            lwConst.constant = 250
-//            inactiveImageView.contentMode = .scaleToFill
+
             titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
             subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
             
