@@ -32,16 +32,14 @@ public class SpecialAnimationFourViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        bottomView.actionButton?.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+        
         let dataSource = model?.objectTwo?.center.items.map({ ($0.name ?? "", $0.res ?? "") }) ?? []
         
         data = dataSource
         bottomView.model = self.model
         setupUI()
         setConstraints()
-        
-        bottomView.buttonTapped = { [weak self] in
-            self?.delegate?.buttonTapped(isResult: false)
-        }
         
         if !ProgressHUD.shared.isShow {
             ScreenShield.shared.protect(view: self.bottomLabel)
@@ -129,6 +127,10 @@ public class SpecialAnimationFourViewController: UIViewController {
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    @objc private func buttonTap() {
+        self.delegate?.buttonTapped(isResult: false)
     }
 }
 

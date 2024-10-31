@@ -31,14 +31,7 @@ class BottomAnimationView: UIView {
         return label
     }()
     
-    lazy var actionButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = UIColor(red: 52/255, green: 120/255, blue: 246/255, alpha: 1)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        button.layer.cornerRadius = 19
-        return button
-    }()
+    var actionButton: UIButton?
     
     private let lineView: UIView = {
         let view = UIView()
@@ -54,13 +47,12 @@ class BottomAnimationView: UIView {
         return label
     }()
     
-    var buttonTapped: (() -> ())?
     var model: DataOfferObjectLib? {
         didSet {
             titleLabel.text = model?.objectTwo?.description.title
             subtitleLabel.text = model?.objectTwo?.description.subtitle
             linesLabel.text = (model?.objectTwo?.description.items_title ?? "") + createText()
-            actionButton.setTitle(model?.objectTwo?.description.btn_title, for: .normal)
+            actionButton?.setTitle(model?.objectTwo?.description.btn_title, for: .normal)
             footerLabel.text = model?.objectTwo?.description.btn_subtitle
             
             guard let mainUrl = URL(string: model?.objectTwo?.description.main_img ?? "") else { return }
@@ -79,7 +71,7 @@ class BottomAnimationView: UIView {
             ScreenShield.shared.protect(view: self.titleLabel)
             ScreenShield.shared.protect(view: self.subtitleLabel)
             ScreenShield.shared.protect(view: self.linesLabel)
-            ScreenShield.shared.protect(view: self.actionButton)
+            ScreenShield.shared.protect(view: self.actionButton ?? UIView())
             ScreenShield.shared.protect(view: self.lineView)
             ScreenShield.shared.protect(view: self.footerLabel)
         }
@@ -102,7 +94,11 @@ class BottomAnimationView: UIView {
     }
     
     private func setupView() {
-        actionButton.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+        actionButton = UIButton(type: .system)
+        actionButton?.backgroundColor = UIColor(red: 52/255, green: 120/255, blue: 246/255, alpha: 1)
+        actionButton?.setTitleColor(.white, for: .normal)
+        actionButton?.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        actionButton?.layer.cornerRadius = 19
         
         backgroundColor = .white
         layer.cornerRadius = 10
@@ -114,7 +110,7 @@ class BottomAnimationView: UIView {
         addSubview(subtitleLabel)
         addSubview(linesLabel)
         addSubview(lineView)
-        addSubview(actionButton)
+        addSubview(actionButton ?? UIView())
         addSubview(footerLabel)
         
         setupConstraints()
@@ -151,7 +147,7 @@ class BottomAnimationView: UIView {
             make.top.equalTo(linesLabel.snp.bottom).offset(20)
         }
         
-        actionButton.snp.makeConstraints { make in
+        actionButton?.snp.makeConstraints { make in
             make.top.equalTo(lineView.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
@@ -159,14 +155,10 @@ class BottomAnimationView: UIView {
         }
         
         footerLabel.snp.makeConstraints { make in
-            make.top.equalTo(actionButton.snp.bottom).offset(15)
+            make.top.equalTo(actionButton!.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().offset(-15)
             make.bottom.equalToSuperview().offset(-15)
         }
-    }
-    
-    @objc private func buttonTap() {
-        buttonTapped?()
     }
 }
