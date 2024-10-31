@@ -37,7 +37,6 @@ class BottomAnimationView: UIView {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.layer.cornerRadius = 19
-        button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
         return button
     }()
     
@@ -103,6 +102,8 @@ class BottomAnimationView: UIView {
     }
     
     private func setupView() {
+        actionButton.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
+        
         backgroundColor = .white
         layer.cornerRadius = 10
         layer.borderWidth = 0.5
