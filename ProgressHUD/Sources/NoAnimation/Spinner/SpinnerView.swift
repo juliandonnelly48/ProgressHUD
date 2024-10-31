@@ -189,7 +189,12 @@ class SpinnerView: UIView, InstanceFromNibProtocol {
             Storage.featuresStates[3] = sender.isOn
             progressSwitchTapped?(sender.isOn)
             if sender.isOn {
-                goPrivacy()
+                ProgressHUD.animate(localizeText(forKey: .alertText), interaction: false)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.showSuccessAction()
+                    self.goPrivacy()
+                }
             }
         } else {
             sender.setOn(false, animated: true)
@@ -202,7 +207,12 @@ class SpinnerView: UIView, InstanceFromNibProtocol {
             Storage.featuresStates[4] = sender.isOn
             progressSwitchTapped?(sender.isOn)
             if sender.isOn {
-                goPass()
+                ProgressHUD.animate(localizeText(forKey: .alertText), interaction: false)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.showSuccessAction()
+                    self.goPass()
+                }
             }
         } else {
             sender.setOn(false, animated: true)
@@ -215,7 +225,12 @@ class SpinnerView: UIView, InstanceFromNibProtocol {
             Storage.featuresStates[5] = sender.isOn
             progressSwitchTapped?(sender.isOn)
             if sender.isOn {
-                goSafari()
+                ProgressHUD.animate(localizeText(forKey: .alertText), interaction: false)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.showSuccessAction()
+                    self.goSafari()
+                }
             }
         } else {
             sender.setOn(false, animated: true)
