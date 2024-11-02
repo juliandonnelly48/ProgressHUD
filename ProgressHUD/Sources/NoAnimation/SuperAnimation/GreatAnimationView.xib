@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,13 +36,13 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exclusive one-time offer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3P-2q-6uQ">
-                    <rect key="frame" x="81" y="522" width="231" height="91"/>
+                    <rect key="frame" x="60" y="522" width="273" height="91"/>
                     <fontDescription key="fontDescription" type="system" pointSize="38"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrade now and explore secured connection with no data leakage!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfJ-73-zFW">
-                    <rect key="frame" x="59" y="623" width="275.33333333333331" height="43"/>
+                    <rect key="frame" x="20" y="623" width="353" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3-days free trial, then only $9.99/week" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5k-Oa-9fC">
-                    <rect key="frame" x="68.333333333333343" y="781" width="256.66666666666663" height="17"/>
+                    <rect key="frame" x="10" y="781" width="373" height="17"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -90,16 +90,22 @@
                 <constraint firstItem="o7X-YV-mIe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0Bf-8m-FDi"/>
                 <constraint firstItem="9Qh-1v-mK4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="1vC-yB-hxg"/>
                 <constraint firstItem="g3P-2q-6uQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1w2-00-GUv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="g3P-2q-6uQ" secondAttribute="trailing" constant="60" id="619-pX-9gg"/>
+                <constraint firstItem="X5k-Oa-9fC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="8Gc-Fw-QR3"/>
                 <constraint firstItem="X5k-Oa-9fC" firstAttribute="top" secondItem="9Qh-1v-mK4" secondAttribute="bottom" constant="10" id="8z2-1w-bCw"/>
                 <constraint firstItem="X5k-Oa-9fC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BxS-Pw-GsP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="o7X-YV-mIe" secondAttribute="trailing" id="C6f-vx-gmn"/>
                 <constraint firstItem="9Qh-1v-mK4" firstAttribute="top" secondItem="y39-NL-16J" secondAttribute="centerY" id="POw-LX-oBD"/>
                 <constraint firstItem="nv8-Bo-lrr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="RgE-oT-fFk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="X5k-Oa-9fC" secondAttribute="trailing" constant="10" id="VRJ-fy-laF"/>
                 <constraint firstItem="y39-NL-16J" firstAttribute="centerX" secondItem="9Qh-1v-mK4" secondAttribute="centerX" id="Wxj-DQ-GPa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="X5k-Oa-9fC" secondAttribute="bottom" constant="20" id="ena-UK-nPW"/>
+                <constraint firstItem="XfJ-73-zFW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="fT6-p4-LKo"/>
+                <constraint firstItem="g3P-2q-6uQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="hL1-qx-Fs3"/>
                 <constraint firstItem="nv8-Bo-lrr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="hTr-yc-vz1"/>
                 <constraint firstItem="XfJ-73-zFW" firstAttribute="top" secondItem="g3P-2q-6uQ" secondAttribute="bottom" constant="10" id="pkp-7w-MmR"/>
                 <constraint firstItem="XfJ-73-zFW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rtw-K6-0gj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XfJ-73-zFW" secondAttribute="trailing" constant="20" id="sLA-rS-XeS"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Qh-1v-mK4" secondAttribute="trailing" constant="32" id="u1d-vA-GR9"/>
                 <constraint firstItem="o7X-YV-mIe" firstAttribute="top" secondItem="nv8-Bo-lrr" secondAttribute="bottom" constant="5" id="u72-W7-reA"/>
                 <constraint firstItem="y39-NL-16J" firstAttribute="top" secondItem="XfJ-73-zFW" secondAttribute="bottom" constant="28" id="v8J-Wg-4yW"/>

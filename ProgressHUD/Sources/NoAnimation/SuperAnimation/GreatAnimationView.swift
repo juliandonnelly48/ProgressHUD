@@ -21,8 +21,6 @@ class GreatAnimationView: UIView, InstanceFromNibProtocol {
     
     var currentTariff: String? {
         didSet {
-            //            let text = currentTariff?.localizedPrice ?? "$\(currentTariff?.price ?? 7.99)"
-            
             pricelabel.text = String(format: localizeText(forKey: .subsPrice), currentTariff ?? "7.99")
         }
     }
