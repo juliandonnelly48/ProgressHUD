@@ -147,6 +147,7 @@ extension SpecialAnimationFourViewController: UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let leftLabel = UILabel()
         
+        cell.selectionStyle = .none
         leftLabel.textColor = .black
         leftLabel.font = .systemFont(ofSize: 16, weight: .regular)
         
