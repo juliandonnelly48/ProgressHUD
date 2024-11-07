@@ -86,6 +86,7 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
     
     @IBOutlet weak var dimView: UIView!
     
+    @IBOutlet weak var titleTop: NSLayoutConstraint!
     @IBOutlet weak var topConst: NSLayoutConstraint!
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
@@ -101,7 +102,8 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
         super.awakeFromNib()
         
         if isVerySmallDevice {
-            topConst.constant = 20
+            titleTop.constant = 10
+            topConst.constant = 10
             bottomConst.constant = 24
             titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
             subtitleLabel.font = .systemFont(ofSize: 15)
