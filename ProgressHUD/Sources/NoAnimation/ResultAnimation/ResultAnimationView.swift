@@ -57,10 +57,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     private var couter = 0
     private var progress: Float = 0
     @IBOutlet weak var circularProgress: CircularProgressView! {
-        didSet {
-            circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
-            circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
-        }
+//        didSet {
+//            circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
+//            circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
+//        }
     }
     private var timer: Timer?
     var timerBzz: Timer?
@@ -84,6 +84,9 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             layoutIfNeeded()
             
             circularProgress.configureProgressViewToBeCircular()
+            
+            circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
+            circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         } else if isSmallDevice {
             topConst.constant = 15
             subTop.constant = 10
