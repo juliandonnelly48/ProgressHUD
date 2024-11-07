@@ -7,6 +7,8 @@ public protocol SpecialAnimationDelegate: AnyObject {
 }
 
 public class SpecialAnimationFourViewController: UIViewController {
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
+    
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let bottomLabel = UILabel()
@@ -75,13 +77,13 @@ public class SpecialAnimationFourViewController: UIViewController {
         bottomLabel.text = model?.objectTwo?.center.footer_text
         bottomLabel.numberOfLines = 0
         bottomLabel.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
-        bottomLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        bottomLabel.font = .systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .medium)
         bottomLabel.textAlignment = .left
         contentView.addSubview(bottomLabel)
         
         topLabel.text = model?.objectTwo?.center.title
         topLabel.textColor = .black
-        topLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        topLabel.font = .systemFont(ofSize: isVerySmallDevice ? 16 : 18, weight: .semibold)
         topLabel.textAlignment = .center
         contentView.addSubview(topLabel)
     }
@@ -149,12 +151,12 @@ extension SpecialAnimationFourViewController: UITableViewDataSource, UITableView
         
         cell.selectionStyle = .none
         leftLabel.textColor = .black
-        leftLabel.font = .systemFont(ofSize: 16, weight: .regular)
+        leftLabel.font = .systemFont(ofSize: isVerySmallDevice ? 14 : 16, weight: .regular)
         
         let rightLabel = UILabel()
         
         rightLabel.textColor = .red
-        rightLabel.font = .systemFont(ofSize: 14, weight: .medium)
+        rightLabel.font = .systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .medium)
         leftLabel.text = data[indexPath.row].0
         rightLabel.text = data[indexPath.row].1
         rightLabel.textAlignment = .right

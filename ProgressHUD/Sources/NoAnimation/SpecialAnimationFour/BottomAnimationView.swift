@@ -3,29 +3,31 @@ import UIKit
 import ScreenShield
 import SnapKit
 
-class BottomAnimationView: UIView {
+final class BottomAnimationView: UIView {
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
+    
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 14 : 16, weight: .semibold)
         return label
     }()
     
-    private let subtitleLabel: UILabel = {
+    private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .regular)
         label.textColor = UIColor(red: 103/255, green: 103/255, blue: 103/255, alpha: 1)
         return label
     }()
     
-    private let linesLabel: UILabel = {
+    private lazy var linesLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .medium)
         label.numberOfLines = 0
         label.textColor = .black
         return label
@@ -39,9 +41,9 @@ class BottomAnimationView: UIView {
         return view
     }()
     
-    private let footerLabel: UILabel = {
+    private lazy var footerLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .medium)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .medium)
         label.textColor = .red
         label.textAlignment = .center
         return label

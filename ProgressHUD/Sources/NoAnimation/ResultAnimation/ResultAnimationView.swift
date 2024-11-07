@@ -31,6 +31,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     typealias InstanceFromNibType = ResultAnimationView
     
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
