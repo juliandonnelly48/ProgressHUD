@@ -158,6 +158,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 
+                animationView.isHidden = true
                 inactiveImageView.isHidden = false
                 animationTitle.text = model?.scn?.title_anim_unp
                 subtitleLabel.text = model?.scn?.subtitle_unp
