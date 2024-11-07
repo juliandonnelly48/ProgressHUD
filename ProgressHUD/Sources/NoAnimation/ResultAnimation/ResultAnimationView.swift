@@ -81,7 +81,6 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
             subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
             animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-            animationSubtitle.font = UIFont.systemFont(ofSize: 10, weight: .medium)
             
             layoutIfNeeded()
         } else if isSmallDevice {
@@ -126,11 +125,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .medium)
                 ])
                 let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 
@@ -151,11 +150,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             } else {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .medium)
                 ])
                 let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 
@@ -180,11 +179,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         } else {
             let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium)
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .medium)
             ])
             let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .bold)
             ])
             attributedStrOne.append(attributedStrTwo)
             
