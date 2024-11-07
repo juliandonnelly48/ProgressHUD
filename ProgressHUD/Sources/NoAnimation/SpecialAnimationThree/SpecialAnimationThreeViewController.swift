@@ -46,7 +46,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     
     private lazy var lowLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: isVerySmallDevice ? 16 : 18, weight: .medium)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 14 : 18, weight: .medium)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
