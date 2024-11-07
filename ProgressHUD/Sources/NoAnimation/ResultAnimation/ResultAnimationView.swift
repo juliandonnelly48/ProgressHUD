@@ -69,8 +69,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         super.awakeFromNib()
         
         if isVerySmallDevice {
-            stackheigt.constant = 140
-            stackWidth.constant = 140
+            stackheigt.constant = 130
+            stackWidth.constant = 130
             topConst.constant = 15
             subTop.constant = 10
             animTop.constant = 5
@@ -80,6 +80,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             inactiveImageView.contentMode = .scaleAspectFit
             titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
             subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            animationSubtitle.font = UIFont.systemFont(ofSize: 10, weight: .medium)
             
             layoutIfNeeded()
         } else if isSmallDevice {
