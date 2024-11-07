@@ -7,6 +7,7 @@ import AudioToolbox
 class SpecialAnimationView: UIView, InstanceFromNibProtocol{
     typealias InstanceFromNibType = SpecialAnimationView
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -57,7 +58,13 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(bzzz), userInfo: nil, repeats: false)
             }
             
-            if isSmallDevice {
+            if isVerySmallDevice {
+                imageHeightContraint.constant = 200
+                continueButtonHeightContraint.constant = 40
+                continueButtonBottomContraint.constant = 10
+                titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
+                subtitleLabel.font = .systemFont(ofSize: 16, weight: .medium)
+            } else if isSmallDevice {
                 imageHeightContraint.constant = 250
                 continueButtonHeightContraint.constant = 40
                 continueButtonBottomContraint.constant = 10
