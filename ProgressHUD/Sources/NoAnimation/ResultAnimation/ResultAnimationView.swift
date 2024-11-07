@@ -56,12 +56,13 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     private var isTarifPaidAndActive: Bool?
     private var couter = 0
     private var progress: Float = 0
-    @IBOutlet weak var circularProgress: CircularProgressView! {
+    @IBOutlet weak var circularProgress: CircularProgressView!
+//    {
 //        didSet {
 //            circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
 //            circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
 //        }
-    }
+//    }
     private var timer: Timer?
     var timerBzz: Timer?
     
