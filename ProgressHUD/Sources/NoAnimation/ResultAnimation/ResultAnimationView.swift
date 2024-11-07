@@ -125,11 +125,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .medium)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 8 : 12, weight: .medium)
                 ])
                 let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .bold)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 14, weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 

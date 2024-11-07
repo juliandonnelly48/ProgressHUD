@@ -3,9 +3,9 @@
 import UIKit
 import ScreenShield
 
-class SpinnerView: UIView, InstanceFromNibProtocol {
+final class SpinnerView: UIView, InstanceFromNibProtocol {
     typealias InstanceFromNibType = SpinnerView
-    
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var subtitleLabel: UILabel!
