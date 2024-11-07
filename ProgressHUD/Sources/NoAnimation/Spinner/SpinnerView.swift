@@ -45,6 +45,9 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
         
         featuresNameLabels.forEach({
             $0.text = model?.scn?.features?[$0.tag].name
+            if isVerySmallDevice {
+                $0.adjustsFontSizeToFitWidth = true
+            }
         })
         
         Storage.featuresStates[0] = isPaid
@@ -69,11 +72,19 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
                 } else {
                     featuresStatusLabels[i].text = model?.scn?.features?[i].b_status
                 }
+                
+                if isVerySmallDevice {
+                    featuresStatusLabels[i].adjustsFontSizeToFitWidth = true
+                }
             }
         } else {
             featuresStatusLabels.forEach({
                 $0.text = model?.scn?.features?[$0.tag].b_status
                 $0.textColor = UIColor().hexStringToUIColor(hex: "#E74444")
+                
+                if isVerySmallDevice {
+                    $0.adjustsFontSizeToFitWidth = true
+                }
             })
             
             featuresIcons.forEach {
