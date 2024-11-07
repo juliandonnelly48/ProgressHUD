@@ -410,6 +410,7 @@
                 <outlet property="findIcon" destination="jBC-eh-4E7" id="5gz-rY-WlT"/>
                 <outlet property="findSubtitle" destination="vwh-aS-eS7" id="Snh-7C-Xhw"/>
                 <outlet property="findTitle" destination="rYx-WR-1U2" id="Axa-nN-zU6"/>
+                <outlet property="findTop" destination="Tqj-B0-Vbe" id="nTh-OW-Cba"/>
                 <outlet property="findView" destination="1Cn-Ak-zNt" id="v4L-mr-ImI"/>
                 <outlet property="iconImageView" destination="5E4-Vv-0qI" id="rK3-61-dZM"/>
                 <outlet property="informationlabel" destination="7Pw-sV-1vV" id="zcY-oC-Jb9"/>
