@@ -73,8 +73,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             stackWidth.constant = 130
             topConst.constant = 15
             subTop.constant = 5
-            animTop.constant = 5
-            bannerTop.constant = 5
+            animTop.constant = 0
+            bannerTop.constant = 0
             lhConst.constant = 200
             lwConst.constant = 200
             inactiveImageView.contentMode = .scaleAspectFit
