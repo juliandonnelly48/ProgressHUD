@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -115,6 +115,8 @@
                 <outlet property="lhConst" destination="dFZ-GC-sOD" id="ktY-lk-QCY"/>
                 <outlet property="lwConst" destination="Gcl-wW-fii" id="SDd-iI-EPH"/>
                 <outlet property="stackView" destination="wJq-4S-dDt" id="O5b-Ef-gLl"/>
+                <outlet property="stackWidth" destination="ydj-Q1-w0B" id="aMj-y9-7jG"/>
+                <outlet property="stackheigt" destination="zW9-0h-DtE" id="rSi-XC-dKU"/>
                 <outlet property="subTop" destination="ucn-eN-hzy" id="LmM-ZG-RpB"/>
                 <outlet property="subtitleLabel" destination="db2-Td-X2z" id="ed5-Ty-OZB"/>
                 <outlet property="titleLabel" destination="qyD-kd-KVg" id="Spu-MH-uJu"/>

@@ -50,6 +50,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var subTop: NSLayoutConstraint!
     @IBOutlet weak var animTop: NSLayoutConstraint!
     @IBOutlet weak var bannerTop: NSLayoutConstraint!
+    @IBOutlet weak var stackheigt: NSLayoutConstraint!
+    @IBOutlet weak var stackWidth: NSLayoutConstraint!
     
     private let bannerView = SpinnerView.instanceFromNib()
     private var model: DataOfferObjectLib?
@@ -57,12 +59,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     private var couter = 0
     private var progress: Float = 0
     @IBOutlet weak var circularProgress: CircularProgressView!
-//    {
-//        didSet {
-//            circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
-//            circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
-//        }
-//    }
+
     private var timer: Timer?
     var timerBzz: Timer?
     
@@ -72,6 +69,8 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         super.awakeFromNib()
         
         if isVerySmallDevice {
+            stackheigt.constant = 140
+            stackWidth.constant = 140
             topConst.constant = 15
             subTop.constant = 10
             animTop.constant = 5
@@ -83,11 +82,6 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
             
             layoutIfNeeded()
-            
-            circularProgress.configureProgressViewToBeCircular()
-            
-            circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
-            circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         } else if isSmallDevice {
             topConst.constant = 15
             subTop.constant = 10
@@ -99,6 +93,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             
             layoutIfNeeded()
         }
+        
+        circularProgress.configureProgressViewToBeCircular()
+        
+        circularProgress.setProgressColor = UIColor().hexStringToUIColor(hex: "#65D65C")
+        circularProgress.setTrackColor = UIColor(displayP3Red: 205.0/255.0, green: 247.0/255.0, blue: 212.0/255.0, alpha: 1.0)
         
         bannerContainer.addSubview(bannerView)
         bannerView.snp.makeConstraints { make in
