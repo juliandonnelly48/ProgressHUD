@@ -70,7 +70,19 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if isSmallDevice {
+        if isVerySmallDevice {
+            topConst.constant = 15
+            subTop.constant = 10
+            animTop.constant = 5
+            bannerTop.constant = 5
+            lhConst.constant = 200
+            lwConst.constant = 200
+            
+            titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+            subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            
+            layoutIfNeeded()
+        } else if isSmallDevice {
             topConst.constant = 15
             subTop.constant = 10
             animTop.constant = 5
