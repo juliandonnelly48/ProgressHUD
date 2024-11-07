@@ -43,6 +43,7 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
     typealias InstanceFromNibType = DetailAnimationView
     
     private let isSmallDevice = UIScreen.main.nativeBounds.height <= 1334
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -99,7 +100,13 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if isSmallDevice {
+        if isVerySmallDevice {
+            topConst.constant = 20
+            bottomConst.constant = 24
+            titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
+            subtitleLabel.font = .systemFont(ofSize: 15)
+            informationlabel.font = .systemFont(ofSize: 10, weight: .bold)
+        } else if isSmallDevice {
             topConst.constant = 40
             bottomConst.constant = 44
         }
