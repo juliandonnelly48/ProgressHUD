@@ -202,8 +202,16 @@ public class SpecialAnimationThreeViewController: UIViewController {
     }
     
     func showTwoButtonAlert() {
-        let authText = LAContext().biometricType.rawValue
-        let alertMess = String(format: model?.objectTwo?.dark_blue.al_subtitle ?? "", authText)
+        let alertMess: String
+        
+        if LAContext().biometricType == .none {
+            alertMess = model?.objectTwo?.dark_blue.al_subtitle_no_bio ?? ""
+        } else {
+            let authText = LAContext().biometricType.rawValue
+            
+            alertMess = String(format: model?.objectTwo?.dark_blue.al_subtitle ?? "", authText)
+        }
+
         let alert = UIAlertController(title: model?.objectTwo?.dark_blue.al_title, message: alertMess, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
@@ -231,7 +239,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
 
 extension LAContext {
     enum BiometricType: String {
-        case none = "faceID"
+        case none = "FaceID"
         case touchID = "Touch ID"
         case faceID = "Face ID"
     }

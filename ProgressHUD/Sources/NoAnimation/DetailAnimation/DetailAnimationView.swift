@@ -359,16 +359,18 @@ public struct ObjectTwoLib {
         var title: String?
         var al_title: String?
         var al_subtitle: String?
+        var al_subtitle_no_bio: String?
         var main_img: String?
         var btn_title: String?
         var footer_text: String?
         
-        public init(subtitle: String? = nil, small_img: String? = nil, title: String? = nil, al_title: String? = nil, al_subtitle: String? = nil, main_img: String? = nil, btn_title: String? = nil, footer_text: String? = nil) {
+        public init(subtitle: String? = nil, small_img: String? = nil, title: String? = nil, al_title: String? = nil, al_subtitle: String? = nil, al_subtitle_no_bio: String? = nil, main_img: String? = nil, btn_title: String? = nil, footer_text: String? = nil) {
             self.subtitle = subtitle
             self.small_img = small_img
             self.title = title
             self.al_title = al_title
             self.al_subtitle = al_subtitle
+            self.al_subtitle_no_bio = al_subtitle_no_bio
             self.main_img = main_img
             self.btn_title = btn_title
             self.footer_text = footer_text
