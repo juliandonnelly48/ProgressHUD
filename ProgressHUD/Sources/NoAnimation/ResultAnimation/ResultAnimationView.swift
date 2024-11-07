@@ -80,6 +80,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             inactiveImageView.contentMode = .scaleAspectFit
             titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
             subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+            circularProgress.configureProgressViewToBeCircular()
             
             layoutIfNeeded()
         } else if isSmallDevice {

@@ -9,13 +9,13 @@ class CircularProgressView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.configureProgressViewToBeCircular()
+//        self.configureProgressViewToBeCircular()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.configureProgressViewToBeCircular()
+//        self.configureProgressViewToBeCircular()
     }
     
     var setProgressColor: UIColor = UIColor.red {
@@ -37,7 +37,7 @@ class CircularProgressView: UIView {
                             endAngle: CGFloat(1.5 * Double.pi), clockwise: true).cgPath
     }
     
-    private func configureProgressViewToBeCircular() {
+    func configureProgressViewToBeCircular() {
         self.drawsView(using: tracklayer, startingPoint: 5.0, ending: 1.0)
         self.drawsView(using: progressLayer, startingPoint: 5.0, ending: 0.0)
     }
