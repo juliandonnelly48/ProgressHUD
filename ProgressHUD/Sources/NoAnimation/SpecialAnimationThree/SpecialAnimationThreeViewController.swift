@@ -4,23 +4,25 @@ import LocalAuthentication
 import ScreenShield
 
 public class SpecialAnimationThreeViewController: UIViewController {
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
+    
     private let topImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 30, weight: .bold)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 26 : 30, weight: .bold)
         label.textColor = .white
         label.textAlignment = .center
         return label
     }()
     
-    private let subtitleLabel: UILabel = {
+    private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .regular)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 19 : 22, weight: .regular)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -30,7 +32,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     private lazy var linesLabel: UILabel = {
         let label = UILabel()
         label.text = (model?.objectTwo?.description.items_title ?? "") + createText()
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 16 : 18, weight: .medium)
         label.numberOfLines = 0
         label.textColor = .white
         return label
@@ -42,9 +44,9 @@ public class SpecialAnimationThreeViewController: UIViewController {
         return imageView
     }()
     
-    private let lowLabel: UILabel = {
+    private lazy var lowLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.font = .systemFont(ofSize: isVerySmallDevice ? 16 : 18, weight: .medium)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -168,7 +170,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
         linesLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.centerY)
             make.leading.equalToSuperview().offset(40)
-            make.trailing.equalToSuperview().offset(-45)
+            make.trailing.equalToSuperview().offset(-35)
         }
         
         actionButton.snp.makeConstraints { make in
