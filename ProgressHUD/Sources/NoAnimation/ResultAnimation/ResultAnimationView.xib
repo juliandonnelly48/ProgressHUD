@@ -54,12 +54,23 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-3O-fR6">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoX-rg-ALs">
                             <rect key="frame" x="0.0" y="113.33333333333333" width="180" height="56.666666666666671"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-3O-fR6">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="14.333333333333334"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Mlp-3O-fR6" secondAttribute="trailing" id="Qhm-Bk-WYj"/>
+                                <constraint firstItem="Mlp-3O-fR6" firstAttribute="leading" secondItem="qoX-rg-ALs" secondAttribute="leading" id="oWP-Tr-cyz"/>
+                                <constraint firstItem="Mlp-3O-fR6" firstAttribute="top" secondItem="qoX-rg-ALs" secondAttribute="top" id="r5T-kS-Tqj"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="width" constant="180" id="ydj-Q1-w0B"/>
