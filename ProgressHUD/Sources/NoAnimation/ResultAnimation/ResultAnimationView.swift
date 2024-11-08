@@ -112,8 +112,6 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         bannerView.progressSwitchTapped = { [weak self] isOn in
             self?.setup(with: self?.model, isTarifPaidAndActive: self?.isTarifPaidAndActive ?? false)
         }
-        
-        stackView.alignment = .top
     }
     
     func setup(with model: DataOfferObjectLib?, isTarifPaidAndActive: Bool) {
