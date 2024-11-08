@@ -113,7 +113,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             self?.setup(with: self?.model, isTarifPaidAndActive: self?.isTarifPaidAndActive ?? false)
         }
         
-        stackView.alignment = .trailing
+        stackView.alignment = .top
     }
     
     func setup(with model: DataOfferObjectLib?, isTarifPaidAndActive: Bool) {
