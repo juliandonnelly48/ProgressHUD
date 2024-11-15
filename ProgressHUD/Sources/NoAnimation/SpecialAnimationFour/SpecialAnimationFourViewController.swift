@@ -73,6 +73,10 @@ public class SpecialAnimationFourViewController: UIViewController {
         contentView.addSubview(tableView)
         contentView.backgroundColor = .clear
         tableView.backgroundColor = .clear
+        tableView.minimumZoomScale = 1.0
+        tableView.maximumZoomScale = 1.0
+        tableView.accessibilityIgnoresInvertColors = true
+        tableView.accessibilityViewIsModal = true
         
         contentView.addSubview(bottomView)
         

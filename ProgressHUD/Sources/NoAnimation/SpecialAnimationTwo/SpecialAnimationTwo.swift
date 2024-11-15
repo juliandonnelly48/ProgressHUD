@@ -22,7 +22,10 @@ class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
         
         containerView.layer.cornerRadius = 10
         tableView.layer.cornerRadius = 10
-        
+        tableView.minimumZoomScale = 1.0
+        tableView.maximumZoomScale = 1.0
+        tableView.accessibilityIgnoresInvertColors = true
+        tableView.accessibilityViewIsModal = true
     }
     
     func showAlertAndPush() {
