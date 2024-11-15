@@ -2,6 +2,10 @@
 import UIKit
 
 public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
+    public func eventsFunc(event: EventsName) {
+        delegate?.eventsFunc(event: event)
+    }
+    
     public func buttonTapped(isResult: Bool) {
         delegate?.buttonTapped(isResult: isResult)
     }
@@ -51,11 +55,17 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
             
             self.navigationController?.present(vc, animated: true)
         }
+        
+        resultView.sendEvent = { [weak self] event in
+            self?.delegate?.eventsFunc(event: event)
+        }
+        
     }
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        eventsFunc(event: .specialOffer5Show)
         resultView.setup(with: model, isTarifPaidAndActive: isPaid)
     }
     

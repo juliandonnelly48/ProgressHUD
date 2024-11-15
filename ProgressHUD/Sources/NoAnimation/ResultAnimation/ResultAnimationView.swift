@@ -64,6 +64,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     var timerBzz: Timer?
     
     var tariffButtonTapped: (() -> Void)?
+    var sendEvent: ((EventsName) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -111,6 +112,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         
         bannerView.progressSwitchTapped = { [weak self] isOn in
             self?.setup(with: self?.model, isTarifPaidAndActive: self?.isTarifPaidAndActive ?? false)
+        }
+        
+        bannerView.goEvent = { [weak self] event in
+            self?.sendEvent?(event)
         }
     }
     

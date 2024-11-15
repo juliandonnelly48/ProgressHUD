@@ -26,6 +26,10 @@ enum LogLevel {
 }
 
 public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimationDelegate {
+    public func eventsFunc(event: EventsName) {
+        delegate?.eventsFunc(event: event)
+    }
+    
     public func buttonTapped(isResult: Bool) {
         delegate?.buttonTapped(isResult: isResult)
     }
@@ -93,6 +97,12 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
             ScreenShield.shared.protect(view: self.specialOfferTwoView.titleLabel)
             ScreenShield.shared.protectFromScreenRecording()
         }
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        eventsFunc(event: .specialOffer2Show)
     }
     
     public override func viewWillDisappear(_ animated: Bool) {

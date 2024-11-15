@@ -23,6 +23,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     var greenDoneComplition: (() -> Void)?
     var tariffButtonTapped: (() -> Void)?
     var progressSwitchTapped: ((Bool) -> Void)?
+    var goEvent: ((EventsName) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -103,8 +104,11 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
                 url = URL(string: "App-Prefs:PASSWORDS")!
             }
             
-            guard UIApplication.shared.canOpenURL(url) else { return }
-            
+            guard UIApplication.shared.canOpenURL(url) else {
+                self.goEvent?(.specialOffer5Error)
+                return
+            }
+            self.goEvent?(.specialOffer5T5Settings)
             UIApplication.shared.open(url)
         }
     }
@@ -119,8 +123,11 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
                 url = URL(string: "App-Prefs:Privacy")!
             }
             
-            guard UIApplication.shared.canOpenURL(url) else { return }
-            
+            guard UIApplication.shared.canOpenURL(url) else {
+                self.goEvent?(.specialOffer5Error)
+                return
+            }
+            self.goEvent?(.specialOffer5T3Settings)
             UIApplication.shared.open(url)
         }
     }
@@ -140,8 +147,11 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
                 
             }
                     
-            guard UIApplication.shared.canOpenURL(url) else { return }
-            
+            guard UIApplication.shared.canOpenURL(url) else {
+                self.goEvent?(.specialOffer5Error)
+                return
+            }
+            self.goEvent?(.specialOffer5T4Settings)
             UIApplication.shared.open(url)
         }
     }
@@ -155,6 +165,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func zeroAction(_ sender: UISwitch) {
+        goEvent?(.specialOffer5T0)
         if !isPaid {
             sender.setOn(false, animated: true)
             tariffButtonTapped?()
@@ -162,6 +173,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func oneAction(_ sender: UISwitch) {
+        goEvent?(.specialOffer5T1)
         if isPaid {
             Storage.featuresStates[1] = sender.isOn
             progressSwitchTapped?(sender.isOn)
@@ -179,6 +191,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func twoAction(_ sender: UISwitch) {
+        goEvent?(.specialOffer5T2)
         if isPaid {
             Storage.featuresStates[2] = sender.isOn
             progressSwitchTapped?(sender.isOn)
@@ -196,6 +209,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func threeAction(_ sender: UISwitch) {
+        goEvent?(.specialOffer5T3)
         if isPaid {
             Storage.featuresStates[3] = sender.isOn
             progressSwitchTapped?(sender.isOn)
@@ -214,6 +228,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func fourAction(_ sender: UISwitch) {
+        goEvent?(.specialOffer5T5)
         if isPaid {
             Storage.featuresStates[4] = sender.isOn
             progressSwitchTapped?(sender.isOn)
@@ -232,6 +247,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     }
     
     @IBAction func fiveAction(_ sender: UISwitch) {
+        goEvent?(.specialOffer5T4)
         if isPaid {
             Storage.featuresStates[5] = sender.isOn
             progressSwitchTapped?(sender.isOn)

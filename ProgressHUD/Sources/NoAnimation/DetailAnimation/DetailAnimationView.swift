@@ -98,6 +98,7 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
     }
     
     var continueButtonTapped: (() -> Void)?
+    var pushShow: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -157,6 +158,7 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
                 self.alertView.isHidden = false
                 self.layoutIfNeeded()
             } completion: { _ in
+                self.pushShow?()
                 self.hidePush()
             }
         }

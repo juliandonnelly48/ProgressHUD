@@ -105,6 +105,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        delegate?.eventsFunc(event: .specialOffer3Show)
         navigationController?.navigationBar.isHidden = true
     }
     
@@ -194,10 +195,12 @@ public class SpecialAnimationThreeViewController: UIViewController {
     func showSingleButtonAlert() {
         let alert = UIAlertController(title: model?.objectTwo?.dark_blue.title, message: model?.objectTwo?.dark_blue.subtitle, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            self?.delegate?.eventsFunc(event: .specialOffer3FirstButtonTap)
             self?.showTwoButtonAlert()
         }
         
         alert.addAction(okAction)
+        delegate?.eventsFunc(event: .specialOffer3ShowFirst)
         present(alert, animated: true, completion: nil)
     }
     
@@ -213,14 +216,17 @@ public class SpecialAnimationThreeViewController: UIViewController {
         }
 
         let alert = UIAlertController(title: model?.objectTwo?.dark_blue.al_title, message: alertMess, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+            self?.delegate?.eventsFunc(event: .specialOffer3SecondButtonDis)
+        }
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            self?.delegate?.eventsFunc(event: .specialOffer3ActionButton)
             self?.delegate?.buttonTapped(isResult: false)
         }
         
         alert.addAction(cancelAction)
         alert.addAction(okAction)
-        
+        delegate?.eventsFunc(event: .specialOffer3ShowSecond)
         present(alert, animated: true, completion: nil)
     }
 
@@ -229,6 +235,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     }
     
     public func goToResult() {
+        delegate?.eventsFunc(event: .specialOffer3Hide)
         DispatchQueue.main.async {
             let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
             

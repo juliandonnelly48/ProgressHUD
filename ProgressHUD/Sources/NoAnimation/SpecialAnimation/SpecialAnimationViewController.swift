@@ -44,6 +44,12 @@ public class SpecialAnimationViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        delegate?.eventsFunc(event: .specialOffer1Show)
+    }
+    
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -52,6 +58,7 @@ public class SpecialAnimationViewController: UIViewController {
     
     private func bindToView() {
         offerView.continueButtonTapped = { [weak self] in
+            self?.delegate?.eventsFunc(event: .specialOffer1ActionButton)
             self?.delegate?.buttonTapped(isResult: false)
         }
         
@@ -65,6 +72,7 @@ public class SpecialAnimationViewController: UIViewController {
     }
     
     public func goToResult() {
+        delegate?.eventsFunc(event: .specialOffer1Hide)
         DispatchQueue.main.async {
             let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
             let nc = UINavigationController(rootViewController: vc)

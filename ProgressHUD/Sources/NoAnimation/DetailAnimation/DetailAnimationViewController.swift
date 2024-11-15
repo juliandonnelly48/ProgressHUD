@@ -31,12 +31,24 @@ class DetailAnimationViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         
         detailInformView.continueButtonTapped = { [weak self] in
+            self?.delegate?.eventsFunc(event: .specialOffer2ActionButton)
             self?.delegate?.buttonTapped(isResult: false)
+        }
+        
+        detailInformView.pushShow = { [weak self] in
+            self?.delegate?.eventsFunc(event: .specialOffer2Notification)
+            self?.delegate?.eventsFunc(event: .specialOffer2Main)
         }
         
         if !ProgressHUD.shared.isShow {
             ScreenShield.shared.protectFromScreenRecording()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        delegate?.eventsFunc(event: .specialOffer2ShowNext)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +58,7 @@ class DetailAnimationViewController: UIViewController {
     }
     
     public func goToResult() {
+        delegate?.eventsFunc(event: .specialOffer2Hide)
         DispatchQueue.main.async {
             let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
             

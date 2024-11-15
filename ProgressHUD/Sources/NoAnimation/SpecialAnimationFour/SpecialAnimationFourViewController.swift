@@ -4,6 +4,7 @@ import ScreenShield
 
 public protocol SpecialAnimationDelegate: AnyObject {
     func buttonTapped(isResult: Bool)
+    func eventsFunc(event: EventsName)
 }
 
 public class SpecialAnimationFourViewController: UIViewController {
@@ -54,6 +55,7 @@ public class SpecialAnimationFourViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        delegate?.eventsFunc(event: .specialOffer4Show)
         navigationController?.navigationBar.isHidden = true
     }
  
@@ -124,6 +126,7 @@ public class SpecialAnimationFourViewController: UIViewController {
     }
     
     public func goToResult() {
+        delegate?.eventsFunc(event: .specialOffer4Hide)
         DispatchQueue.main.async {
             let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
             
@@ -132,6 +135,7 @@ public class SpecialAnimationFourViewController: UIViewController {
     }
     
     @objc private func buttonTap() {
+        self.delegate?.eventsFunc(event: .specialOffer4ActionButton)
         self.delegate?.buttonTapped(isResult: false)
     }
 }

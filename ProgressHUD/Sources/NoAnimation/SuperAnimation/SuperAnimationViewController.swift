@@ -29,12 +29,20 @@ class SuperAnimationViewController: UIViewController {
 		bindToView()
 	}
 	
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        delegate?.eventsFunc(event: .specialOffer5SpecialShow)
+    }
+    
 	private func bindToView() {
 		superOfferView.continueButtonTapped = { [weak self] in
+            self?.delegate?.eventsFunc(event: .specialOffer5SpecialActionButton)
             self?.delegate?.buttonTapped(isResult: true)
 		}
 		
 		superOfferView.closeButtonTapped = { [weak self] in
+            self?.delegate?.eventsFunc(event: .specialOffer5SpecialHide)
 			self?.dismiss(animated: true)
 		}
 	}
