@@ -65,6 +65,9 @@ public class SpecialAnimationFourViewController: UIViewController {
         scrollView.addSubview(contentView)
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 1.0
+        scrollView.delegate = self
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -141,6 +144,12 @@ public class SpecialAnimationFourViewController: UIViewController {
     @objc private func buttonTap() {
         self.delegate?.eventsFunc(event: .specialOffer4ActionButton)
         self.delegate?.buttonTapped(isResult: false)
+    }
+}
+
+extension SpecialAnimationFourViewController: UIScrollViewDelegate {
+    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return nil
     }
 }
 
