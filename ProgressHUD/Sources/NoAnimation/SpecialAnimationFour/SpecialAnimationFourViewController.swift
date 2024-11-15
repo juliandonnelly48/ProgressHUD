@@ -198,4 +198,11 @@ extension SpecialAnimationFourViewController: UITableViewDataSource, UITableView
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return model?.objectTwo?.center.subtitle
     }
+    
+    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        
+        header.textLabel?.font = .systemFont(ofSize: 12)
+        header.textLabel?.frame = header.bounds
+    }
 }
