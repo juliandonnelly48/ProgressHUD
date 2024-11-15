@@ -205,4 +205,8 @@ extension SpecialAnimationFourViewController: UITableViewDataSource, UITableView
         header.textLabel?.font = .systemFont(ofSize: 12)
         header.textLabel?.frame = header.bounds
     }
+    
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
 }
