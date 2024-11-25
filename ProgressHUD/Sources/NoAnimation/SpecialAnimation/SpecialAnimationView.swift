@@ -43,7 +43,8 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
             guard let model else { return }
             
             let imURL = URL(string: model.imageUrl)!
-            mainImageView.kf.setImage(with: imURL, placeholder: UIImage(resource: .present), options: [.processor(SVGImgProcessor())])
+            
+            mainImageView.kf.setImage(with: imURL, options: [.processor(SVGImgProcessor())])
             titleLabel.text = "\(model.settings?.count ?? 20)" + " " + (model.scn?.title_anim_unp ?? "")
             subtitleLabel.text = model.subtitle
             benefitTitleLabel.text = model.benefitTitle
