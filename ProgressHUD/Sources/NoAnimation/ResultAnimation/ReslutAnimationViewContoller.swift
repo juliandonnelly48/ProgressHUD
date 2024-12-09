@@ -2,6 +2,8 @@
 import UIKit
 
 public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDelegate {
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
+    
     public func eventsFunc(event: EventsName) {
         delegate?.eventsFunc(event: event)
     }
@@ -13,7 +15,7 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
     private let resultView = ResultAnimationView.instanceFromNib()
     public var model: DataOfferObjectLib?
     public var isPaid: Bool
-
+    
     weak var delegate: SpecialAnimationDelegate?
     
     public init(_ model: DataOfferObjectLib? = nil, isPaid: Bool, delegate: SpecialAnimationDelegate?) {
@@ -34,16 +36,97 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         if !ProgressHUD.shared.isShow {
             guard let secureView = SecureField().secureContainer else { return }
             
-            secureView.addSubview(resultView)
-            resultView.snp.makeConstraints({$0.edges.equalToSuperview()})
-            self.view.addSubview(secureView)
-            secureView.snp.makeConstraints({$0.edges.equalToSuperview()})
-        } else {
-            self.view.addSubview(resultView)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                let containerView = UIView()
+                
+                containerView.backgroundColor = .white
+                containerView.addSubview(secureView)
+                secureView.addSubview(resultView)
+                self.view.addSubview(secureView)
+                secureView.snp.makeConstraints({$0.edges.equalToSuperview()})
+                self.view.addSubview(containerView)
             
-            resultView.snp.makeConstraints({$0.edges.equalToSuperview()})
+                containerView.snp.makeConstraints { make in
+                    make.edges.equalToSuperview()
+                }
+
+                resultView.snp.makeConstraints { make in
+                    make.center.equalToSuperview()
+                    make.height.equalTo(1032)
+                    make.leading.trailing.equalToSuperview().inset(100)
+                }
+            } else {
+                if isVerySmallDevice {
+                    let scrollView = UIScrollView()
+                    
+                    scrollView.backgroundColor = .white
+                    scrollView.isScrollEnabled = true
+                    scrollView.showsVerticalScrollIndicator = false
+                    view.addSubview(scrollView)
+                    scrollView.addSubview(secureView)
+                    secureView.addSubview(resultView)
+                    
+                    scrollView.snp.makeConstraints { make in
+                        make.edges.equalToSuperview()
+                    }
+                    
+                    secureView.snp.makeConstraints { make in
+                        make.edges.equalToSuperview()
+                    }
+                    
+                    resultView.snp.makeConstraints { make in
+                        make.edges.equalToSuperview()
+                        make.width.equalTo(scrollView)
+                    }
+                } else {
+                    secureView.addSubview(resultView)
+                    resultView.snp.makeConstraints({$0.edges.equalToSuperview()})
+                    self.view.addSubview(secureView)
+                    secureView.snp.makeConstraints({$0.edges.equalToSuperview()})
+                }
+            }
+        } else {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                let containerView = UIView()
+                
+                containerView.backgroundColor = .white
+                self.view.addSubview(containerView)
+                containerView.addSubview(resultView)
+                
+                containerView.snp.makeConstraints { make in
+                    make.edges.equalToSuperview()
+                }
+                
+                resultView.snp.makeConstraints { make in
+                    make.center.equalToSuperview()
+                    make.height.equalTo(1032)
+                    make.leading.trailing.equalToSuperview().inset(100)
+                }
+            } else {
+                if isVerySmallDevice {
+                    let scrollView = UIScrollView()
+                    
+                    scrollView.backgroundColor = .white
+                    scrollView.isScrollEnabled = true
+                    scrollView.showsVerticalScrollIndicator = false
+                    view.addSubview(scrollView)
+                    scrollView.addSubview(resultView)
+                    
+                    scrollView.snp.makeConstraints { make in
+                        make.edges.equalToSuperview()
+                    }
+                    
+                    resultView.snp.makeConstraints { make in
+                        make.edges.equalToSuperview()
+                        make.width.equalTo(scrollView)
+                    }
+                } else {
+                    self.view.addSubview(resultView)
+                    
+                    resultView.snp.makeConstraints({$0.edges.equalToSuperview()})
+                }
+            }
         }
-        
         navigationController?.isNavigationBarHidden = true
         
         resultView.tariffButtonTapped = { [weak self] in

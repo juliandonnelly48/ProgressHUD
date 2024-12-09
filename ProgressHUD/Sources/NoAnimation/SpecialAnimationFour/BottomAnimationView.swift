@@ -151,8 +151,13 @@ final class BottomAnimationView: UIView {
         
         actionButton?.snp.makeConstraints { make in
             make.top.equalTo(lineView.snp.bottom).offset(15)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-16)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                make.width.equalTo(315)
+                make.centerX.equalToSuperview()
+            } else {
+                make.leading.equalToSuperview().offset(16)
+                make.trailing.equalToSuperview().offset(-16)
+            }
             make.height.equalTo(38)
         }
         

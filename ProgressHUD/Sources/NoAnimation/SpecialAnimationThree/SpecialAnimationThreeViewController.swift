@@ -14,7 +14,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: isVerySmallDevice ? 26 : 30, weight: .bold)
+        label.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 34 : isVerySmallDevice ? 22 : 30, weight: .bold)
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -22,7 +22,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
     
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: isVerySmallDevice ? 19 : 22, weight: .regular)
+        label.font = .systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 24 : isVerySmallDevice ? 16 : 22, weight: .regular)
         label.textColor = .white
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -61,14 +61,16 @@ public class SpecialAnimationThreeViewController: UIViewController {
         return stack
     }()
     
-    private let actionButton: UIButton = {
+    private lazy var actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(red: 115/255, green: 199/255, blue: 0/255, alpha: 1)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: isVerySmallDevice ? 16 : 20, weight: .bold)
         button.layer.cornerRadius = 10
         return button
     }()
+    
+    private let containerView = UIView()
     
     public var model: DataOfferObjectLib?
     weak var delegate: SpecialAnimationDelegate?
@@ -138,28 +140,51 @@ public class SpecialAnimationThreeViewController: UIViewController {
         actionButton.setTitle(model?.objectTwo?.dark_blue.btn_title, for: .normal)
         actionButton.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
         
-        view.addSubview(topImageView)
-        view.addSubview(titleLabel)
-        view.addSubview(subtitleLabel)
-        view.addSubview(linesLabel)
-        view.addSubview(hStack)
-        view.addSubview(actionButton)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            containerView.backgroundColor = UIColor(red: 29/255, green: 34/255, blue: 57/255, alpha: 1)
+            self.view.addSubview(containerView)
+            
+            containerView.addSubview(topImageView)
+            containerView.addSubview(titleLabel)
+            containerView.addSubview(subtitleLabel)
+            containerView.addSubview(linesLabel)
+            containerView.addSubview(hStack)
+            containerView.addSubview(actionButton)
+            
+            containerView.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.height.equalTo(627)
+                make.width.equalTo(400)
+            }
+        } else {
+            view.addSubview(topImageView)
+            view.addSubview(titleLabel)
+            view.addSubview(subtitleLabel)
+            view.addSubview(linesLabel)
+            view.addSubview(hStack)
+            view.addSubview(actionButton)
+        }
     }
     
     private func setConstraints() {
         view.backgroundColor = UIColor(red: 29/255, green: 34/255, blue: 57/255, alpha: 1)
         
         topImageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-            make.width.equalTo(109)
-            make.height.equalTo(97)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                make.top.equalTo(containerView.snp.top)
+            } else {
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+            }
+            
+            make.width.equalTo(UIDevice.current.userInterfaceIdiom == .pad ? 252 : isVerySmallDevice ? 57 : 109)
+            make.height.equalTo(UIDevice.current.userInterfaceIdiom == .pad ? 225 : isVerySmallDevice ? 51 : 97)
             make.centerX.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().offset(-5)
-            make.top.equalTo(topImageView.snp.bottom).offset(15)
+            make.top.equalTo(topImageView.snp.bottom).offset(UIDevice.current.userInterfaceIdiom == .pad ? 35 : 15)
         }
         
         subtitleLabel.snp.makeConstraints { make in
@@ -169,15 +194,28 @@ public class SpecialAnimationThreeViewController: UIViewController {
         }
         
         linesLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.centerY)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                make.top.equalTo(subtitleLabel.snp.bottom).inset(-35)
+            } else {
+                if self.isVerySmallDevice {
+                    make.top.equalTo(subtitleLabel.snp.bottom).inset(-48)
+                } else {
+                    make.top.equalTo(view.snp.centerY)
+                }
+            }
+            
             make.leading.equalToSuperview().offset(40)
             make.trailing.equalToSuperview().offset(-35)
         }
         
         actionButton.snp.makeConstraints { make in
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                make.bottom.equalTo(containerView.snp.bottom)
+            } else {
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
+            }
             make.leading.equalToSuperview().offset(37)
             make.trailing.equalToSuperview().offset(-37)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
             make.height.equalTo(50)
         }
         

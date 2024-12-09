@@ -61,19 +61,46 @@ public class SpecialAnimationFourViewController: UIViewController {
  
     private func setupUI() {
         view.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 247/255, alpha: 1)
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        scrollView.isScrollEnabled = true
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 1.0
-        scrollView.delegate = self
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let containerView = UIView()
+            
+            containerView.backgroundColor = .clear
+            self.view.addSubview(containerView)
+            containerView.addSubview(contentView)
+            containerView.addSubview(tableView)
+            containerView.addSubview(bottomView)
+            containerView.addSubview(bottomLabel)
+            containerView.addSubview(topLabel)
+            bottomLabel.textAlignment = .center
+            
+            containerView.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.height.equalTo(628)
+                make.width.equalTo(643)
+                make.top.equalToSuperview().inset(67)
+            }
+        } else {
+            view.addSubview(scrollView)
+            scrollView.addSubview(contentView)
+            scrollView.isScrollEnabled = true
+            scrollView.showsVerticalScrollIndicator = false
+            scrollView.minimumZoomScale = 1.0
+            scrollView.maximumZoomScale = 1.0
+            scrollView.delegate = self
+            bottomLabel.textAlignment = .left
+            contentView.addSubview(tableView)
+            contentView.addSubview(bottomView)
+            contentView.addSubview(bottomLabel)
+            contentView.addSubview(topLabel)
+        }
+        
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.showsVerticalScrollIndicator = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        contentView.addSubview(tableView)
+        
         contentView.backgroundColor = .clear
         tableView.backgroundColor = .clear
         tableView.minimumZoomScale = 1.0
@@ -81,30 +108,29 @@ public class SpecialAnimationFourViewController: UIViewController {
         tableView.accessibilityIgnoresInvertColors = true
         tableView.accessibilityViewIsModal = true
         
-        contentView.addSubview(bottomView)
-        
         bottomLabel.text = model?.objectTwo?.center.footer_text
         bottomLabel.numberOfLines = 0
         bottomLabel.textColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
         bottomLabel.font = .systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .medium)
-        bottomLabel.textAlignment = .left
-        contentView.addSubview(bottomLabel)
         
         topLabel.text = model?.objectTwo?.center.title
         topLabel.textColor = .black
         topLabel.font = .systemFont(ofSize: isVerySmallDevice ? 16 : 18, weight: .semibold)
         topLabel.textAlignment = .center
-        contentView.addSubview(topLabel)
     }
     
     private func setConstraints() {
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            scrollView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
         }
         
         contentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.width.equalTo(scrollView)
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                make.width.equalTo(scrollView)
+            }
         }
         
         topLabel.snp.makeConstraints { make in
@@ -120,14 +146,14 @@ public class SpecialAnimationFourViewController: UIViewController {
         
         bottomLabel.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-15)
-            make.leading.equalToSuperview().offset(21)
-            make.trailing.equalToSuperview().offset(-21)
+            make.leading.equalToSuperview().offset(isVerySmallDevice ? 16 : 21)
+            make.trailing.equalToSuperview().offset(isVerySmallDevice ? -16 : -21)
         }
         
         bottomView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(tableView.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(isVerySmallDevice ? 16 : 20)
+            make.trailing.equalToSuperview().offset(isVerySmallDevice ? -16 : -20)
+            make.top.equalTo(tableView.snp.bottom).offset(isVerySmallDevice ? 0 : 10)
             make.bottom.equalTo(bottomLabel.snp.top).offset(-5)
         }
     }

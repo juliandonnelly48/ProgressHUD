@@ -20,12 +20,35 @@ class DetailAnimationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
-        view = detailInformView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let containerView = UIView()
+            
+            detailInformView.layer.cornerRadius = 20
+            detailInformView.clipsToBounds = true
+            containerView.backgroundColor = .black
+            self.view.addSubview(containerView)
+            containerView.addSubview(detailInformView)
+            
+            containerView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            
+            detailInformView.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.height.equalTo(806)
+                make.width.equalTo(645)
+                make.top.equalToSuperview().inset(50)
+            }
+        } else {
+            self.view.addSubview(detailInformView)
+            
+            detailInformView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+        }
         
         detailInformView.setup(with: model)
         navigationController?.isNavigationBarHidden = true

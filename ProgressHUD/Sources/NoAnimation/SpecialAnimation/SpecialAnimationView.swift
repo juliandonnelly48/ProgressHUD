@@ -33,6 +33,7 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
     @IBOutlet weak var continueButtonHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var continueButtonBottomContraint: NSLayoutConstraint!
     
+    @IBOutlet var stackEdges: [NSLayoutConstraint]!
     var timer: Timer?
     var continueButtonTapped: (() -> Void)?
     var closeButtonTapped: (() -> Void)?
@@ -50,6 +51,10 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
             benefitTitleLabel.text = model.benefitTitle
             benefitLabels.forEach {
                 $0.text = model.benefitDescriptions[$0.tag]
+                
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    $0.font = .systemFont(ofSize: 18, weight: .medium)
+                }
             }
             buyButton.setTitle(model.btnTitle, for: .normal)
             priceLabel.isHidden = true
@@ -59,16 +64,28 @@ class SpecialAnimationView: UIView, InstanceFromNibProtocol{
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(bzzz), userInfo: nil, repeats: false)
             }
             
-            if isVerySmallDevice {
-                imageHeightContraint.constant = 200
-                continueButtonHeightContraint.constant = 40
-                continueButtonBottomContraint.constant = 10
-                titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
-                subtitleLabel.font = .systemFont(ofSize: 16, weight: .medium)
-            } else if isSmallDevice {
-                imageHeightContraint.constant = 250
-                continueButtonHeightContraint.constant = 40
-                continueButtonBottomContraint.constant = 10
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                imageHeightContraint.constant = 333
+                titleLabel.font = .systemFont(ofSize: 34, weight: .bold)
+                subtitleLabel.font = .systemFont(ofSize: 24, weight: .medium)
+                buyButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+                backgroundColor = UIColor().hexStringToUIColor(hex: "FAFCFF")
+                layer.borderColor = UIColor().hexStringToUIColor(hex: "DFDFDF").cgColor
+                layer.borderWidth = 1
+                stackEdges.forEach { edge in
+                    edge.constant = 120
+                }
+            } else {
+                if isVerySmallDevice {
+                    imageHeightContraint.constant = 168
+                    continueButtonBottomContraint.constant = 10
+                    titleLabel.font = .systemFont(ofSize: 22, weight: .bold)
+                    subtitleLabel.font = .systemFont(ofSize: 16, weight: .medium)
+                } else if isSmallDevice {
+                    imageHeightContraint.constant = 250
+                    continueButtonHeightContraint.constant = 40
+                    continueButtonBottomContraint.constant = 10
+                }
             }
         }
     }

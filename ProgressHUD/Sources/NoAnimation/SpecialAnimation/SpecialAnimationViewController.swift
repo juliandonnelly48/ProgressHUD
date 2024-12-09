@@ -25,12 +25,34 @@ public class SpecialAnimationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func loadView() {
-        view = offerView
-    }
-    
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let containerView = UIView()
+            
+            offerView.layer.cornerRadius = 20
+            offerView.clipsToBounds = true
+            containerView.backgroundColor = .white
+            self.view.addSubview(containerView)
+            containerView.addSubview(offerView)
+            
+            containerView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            
+            offerView.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.height.equalTo(800)
+                make.width.equalTo(690)
+            }
+        } else {
+            self.view.addSubview(offerView)
+            
+            offerView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+        }
         
         self.offerView.model = model
         

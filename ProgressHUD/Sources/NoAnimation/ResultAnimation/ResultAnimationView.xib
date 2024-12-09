@@ -102,6 +102,7 @@
                 <constraint firstItem="M8q-mZ-RbB" firstAttribute="top" secondItem="i8c-U7-kK8" secondAttribute="top" id="Wdi-Ad-2v9"/>
                 <constraint firstItem="db2-Td-X2z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="XSj-RM-MAM"/>
                 <constraint firstItem="i8c-U7-kK8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bfM-4k-8lp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RXz-fu-YBY" secondAttribute="bottom" constant="5" id="e6h-hL-KSq"/>
                 <constraint firstItem="RXz-fu-YBY" firstAttribute="top" secondItem="i8c-U7-kK8" secondAttribute="bottom" constant="10" id="ecC-ik-vKs"/>
                 <constraint firstItem="ceT-sZ-e7r" firstAttribute="trailing" secondItem="i8c-U7-kK8" secondAttribute="trailing" constant="-30" id="f4r-Ce-277"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RXz-fu-YBY" secondAttribute="trailing" constant="15" id="fIG-CN-Uq1"/>
@@ -119,6 +120,7 @@
                 <outlet property="animationTitle" destination="Xnu-zf-oRp" id="JBK-kH-jea"/>
                 <outlet property="animationView" destination="i8c-U7-kK8" id="ZJ1-dW-BLy"/>
                 <outlet property="bannerContainer" destination="RXz-fu-YBY" id="NDp-HH-pA9"/>
+                <outlet property="bannerHeight" destination="LP8-Su-Bej" id="opT-0J-wAg"/>
                 <outlet property="bannerTop" destination="ecC-ik-vKs" id="Osk-NG-Nr5"/>
                 <outlet property="circularProgress" destination="ceT-sZ-e7r" id="xzA-3L-6o4"/>
                 <outlet property="iconImageView" destination="3Ma-cT-GRx" id="dDY-1V-vdm"/>

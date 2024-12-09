@@ -6,11 +6,16 @@ import AudioToolbox
 class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
     typealias InstanceFromNibType = SpecialAnimationTwo
     
+    private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dimView: UIView!
+    
+    @IBOutlet weak var iconWidth: NSLayoutConstraint!
+    @IBOutlet weak var iconHeight: NSLayoutConstraint!
     
     private var model: DataOfferObjectLib?
     
@@ -19,6 +24,17 @@ class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            iconWidth.constant = 145
+            iconHeight.constant = 145
+            titleLabel.font = .systemFont(ofSize: 34, weight: .bold)
+        } else {
+            if isVerySmallDevice {
+                iconWidth.constant = 60
+                iconHeight.constant = 60
+            }
+        }
         
         containerView.layer.cornerRadius = 10
         tableView.layer.cornerRadius = 10

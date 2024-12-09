@@ -55,12 +55,34 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func loadView() {
-        view = specialOfferTwoView
-    }
-    
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let containerView = UIView()
+            
+            specialOfferTwoView.layer.cornerRadius = 20
+            specialOfferTwoView.clipsToBounds = true
+            containerView.backgroundColor = .white
+            self.view.addSubview(containerView)
+            containerView.addSubview(specialOfferTwoView)
+            
+            containerView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            
+            specialOfferTwoView.snp.makeConstraints { make in
+                make.center.equalToSuperview()
+                make.height.equalTo(806)
+                make.leading.trailing.equalToSuperview().inset(100)
+            }
+        } else {
+            self.view.addSubview(specialOfferTwoView)
+            
+            specialOfferTwoView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+        }
         
         specialOfferTwoView.setup(with: model)
         specialOfferTwoView.tableView.separatorStyle = .singleLine
@@ -166,7 +188,7 @@ extension SpecialAnimationTwoViewController: UITableViewDataSource, UITableViewD
         
         cell.textLabel?.text = logEntry.message
         cell.textLabel?.textColor = logEntry.level.color
-        cell.textLabel?.font = UIFont.monospacedSystemFont(ofSize: 14, weight: .regular)
+        cell.textLabel?.font = UIFont.monospacedSystemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 16 : 14, weight: .regular)
         cell.backgroundColor = .clear
         cell.textLabel?.numberOfLines = 0
         

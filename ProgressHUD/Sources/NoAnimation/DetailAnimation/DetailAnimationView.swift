@@ -97,25 +97,49 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
         }
     }
     
+    @IBOutlet weak var iconWidth: NSLayoutConstraint!
+    @IBOutlet weak var iconHeight: NSLayoutConstraint!
+    @IBOutlet weak var alertLeading: NSLayoutConstraint!
+    @IBOutlet weak var alertTrailing: NSLayoutConstraint!
+    
     var continueButtonTapped: (() -> Void)?
     var pushShow: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if isVerySmallDevice {
-            findTop.constant = 15
-            titleTop.constant = 10
-            topConst.constant = 15
-            bottomConst.constant = 24
-            titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
-            subtitleLabel.font = .systemFont(ofSize: 15)
-            informationlabel.font = .systemFont(ofSize: 10, weight: .bold)
-        } else if isSmallDevice {
-            topConst.constant = 40
-            bottomConst.constant = 44
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            alertLeading.isActive = false
+            alertTrailing.isActive = false
+            bottomConst.isActive = false
+            titleLabel.font = .systemFont(ofSize: 34, weight: .bold)
+            subtitleLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+            
+            alertView.snp.makeConstraints { make in
+                make.width.equalTo(270)
+            }
+            
+            informationlabel.snp.makeConstraints { make in
+                make.top.equalTo(featureView.snp.bottom).inset(-20)
+            }
+        } else {
+            if isVerySmallDevice {
+                findTop.constant = 15
+                titleTop.constant = 10
+                topConst.constant = 15
+                bottomConst.constant = 24
+                titleLabel.font = .systemFont(ofSize: 22, weight: .bold)
+                subtitleLabel.font = .systemFont(ofSize: 12)
+                informationlabel.font = .systemFont(ofSize: 12, weight: .bold)
+                iconWidth.constant = 75
+                iconHeight.constant = 75
+                alertLeading.constant = 25
+                alertTrailing.constant = 25
+            } else if isSmallDevice {
+                topConst.constant = 40
+                bottomConst.constant = 44
+            }
         }
-        
         alertView.layer.cornerRadius = 24
         pushView.layer.cornerRadius = 24
         
@@ -152,7 +176,7 @@ class DetailAnimationView: UIView, InstanceFromNibProtocol {
             self.bringSubviewToFront(self.dimView)
             self.bringSubviewToFront(self.pushView)
             self.bringSubviewToFront(self.alertView)
-            self.pushTopConstarint.constant = self.isSmallDevice ? 24 : 55
+            self.pushTopConstarint.constant = UIDevice.current.userInterfaceIdiom == .pad ? 0 : self.isSmallDevice ? 24 : 55
             
             UIView.animate(withDuration: 1) {
                 self.alertView.isHidden = false

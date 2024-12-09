@@ -387,8 +387,10 @@
             <connections>
                 <outlet property="alertButton" destination="CnB-Re-7pC" id="wlc-Zo-hoq"/>
                 <outlet property="alertIcon" destination="ltB-IZ-RUL" id="crn-qV-zOE"/>
+                <outlet property="alertLeading" destination="O3e-h4-4Bn" id="Lor-B8-brU"/>
                 <outlet property="alertSubtitle" destination="dFb-eP-yJ3" id="wY9-xM-TdC"/>
                 <outlet property="alertTitle" destination="ZYY-bc-385" id="GDy-VA-1pR"/>
+                <outlet property="alertTrailing" destination="okL-J8-M2t" id="AEH-UX-zFM"/>
                 <outlet property="alertView" destination="eeW-z5-Z0l" id="hLn-zn-8DD"/>
                 <outlet property="bottomConst" destination="e9g-3X-5wd" id="5Uc-Sp-Oug"/>
                 <outlet property="dimView" destination="390-8v-SKO" id="Vws-Bk-QSY"/>
@@ -412,7 +414,9 @@
                 <outlet property="findTitle" destination="rYx-WR-1U2" id="Axa-nN-zU6"/>
                 <outlet property="findTop" destination="Tqj-B0-Vbe" id="nTh-OW-Cba"/>
                 <outlet property="findView" destination="1Cn-Ak-zNt" id="v4L-mr-ImI"/>
+                <outlet property="iconHeight" destination="Nah-CA-hkq" id="IpJ-C1-2K3"/>
                 <outlet property="iconImageView" destination="5E4-Vv-0qI" id="rK3-61-dZM"/>
+                <outlet property="iconWidth" destination="UH0-ud-glF" id="Gyo-UH-4IU"/>
                 <outlet property="informationlabel" destination="7Pw-sV-1vV" id="zcY-oC-Jb9"/>
                 <outlet property="nowLabel" destination="GiF-0v-Urh" id="jWf-Rc-oTg"/>
                 <outlet property="pushIcon" destination="pMa-II-Y6r" id="eVa-zP-tKM"/>
@@ -433,7 +437,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

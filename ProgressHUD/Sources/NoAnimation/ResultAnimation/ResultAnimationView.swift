@@ -53,6 +53,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var stackheigt: NSLayoutConstraint!
     @IBOutlet weak var stackWidth: NSLayoutConstraint!
     
+    @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     private let bannerView = SpinnerView.instanceFromNib()
     private var model: DataOfferObjectLib?
     private var isTarifPaidAndActive: Bool?
@@ -69,31 +70,48 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if isVerySmallDevice {
-            stackheigt.constant = 130
-            stackWidth.constant = 130
-            topConst.constant = 15
-            subTop.constant = 5
-            animTop.constant = 0
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            titleLabel.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+            subtitleLabel.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+            animationTitle.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+            lhConst.constant = 420
+            lwConst.constant = 420
+            bannerHeight.constant = 421
+            inactiveImageView.contentMode = .scaleToFill
+            stackheigt.constant = 215
+            stackWidth.constant = 192
+            topConst.constant = 10
             bannerTop.constant = 0
-            lhConst.constant = 200
-            lwConst.constant = 200
-            inactiveImageView.contentMode = .scaleAspectFit
-            titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-            subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-            animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
             
             layoutIfNeeded()
-        } else if isSmallDevice {
-            topConst.constant = 15
-            subTop.constant = 10
-            animTop.constant = 5
-            bannerTop.constant = 5
-
-            titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-            subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-            
-            layoutIfNeeded()
+        } else {
+            if isVerySmallDevice {
+                bannerHeight.constant = 445
+                stackheigt.constant = 130
+                stackWidth.constant = 130
+                topConst.constant = 15
+                subTop.constant = 5
+                animTop.constant = 0
+                bannerTop.constant = 0
+                lhConst.constant = 250
+                lwConst.constant = 250
+                inactiveImageView.contentMode = .scaleAspectFit
+                titleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+                subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+                animationTitle.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+                
+                layoutIfNeeded()
+            } else if isSmallDevice {
+                topConst.constant = 15
+                subTop.constant = 10
+                animTop.constant = 5
+                bannerTop.constant = 5
+                
+                titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+                subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+                
+                layoutIfNeeded()
+            }
         }
         
         circularProgress.configureProgressViewToBeCircular()
@@ -130,11 +148,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             if Storage.isAllFeaturesEnabled, Storage.featuresStates.count == 6 {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 8 : 12, weight: .medium)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : isVerySmallDevice ? 8 : 12, weight: .medium)
                 ])
                 let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsActive).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#65D65C"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 14, weight: .bold)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : isVerySmallDevice ? 10 : 14, weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 
@@ -155,11 +173,11 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
             } else {
                 let attributedStrOne = NSMutableAttributedString(string: String(model?.scn?.subtitle_anim_compl?.dropLast(2) ?? ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#000000"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 10 : 12, weight: .medium)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 18 : isVerySmallDevice ? 10 : 12, weight: .medium)
                 ])
                 let attributedStrTwo = NSMutableAttributedString(string: localizeText(forKey: .subsOff).uppercased(), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor().hexStringToUIColor(hex: "#E74444"),
-                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: isVerySmallDevice ? 12 : 14, weight: .bold)
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIDevice.current.userInterfaceIdiom == .pad ? 21 : isVerySmallDevice ? 12 : 14, weight: .bold)
                 ])
                 attributedStrOne.append(attributedStrTwo)
                 

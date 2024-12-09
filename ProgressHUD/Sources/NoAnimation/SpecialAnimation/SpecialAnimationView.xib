@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SpecialAnimationView" customModule="ProgressHUD">
-            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spec_bg" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-LT-cmh">
-                    <rect key="frame" x="0.0" y="0.0" width="430" height="340"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="340"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="340" id="s4G-nU-9C6"/>
                     </constraints>
@@ -35,10 +35,10 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="present" translatesAutoresizingMaskIntoConstraints="NO" id="foh-Jg-aex">
-                    <rect key="frame" x="53.666666666666657" y="59" width="323" height="281"/>
+                    <rect key="frame" x="35" y="59" width="323" height="281"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock Premium Features" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIB-Qa-Tj1">
-                    <rect key="frame" x="75" y="466" width="280" height="71.666666666666629"/>
+                    <rect key="frame" x="56.666666666666657" y="386" width="280" height="71.666666666666686"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="sY1-tK-WPV"/>
                     </constraints>
@@ -47,22 +47,22 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock full power of Organizer and keep your device safe!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-Yc-UH9">
-                    <rect key="frame" x="15" y="542.66666666666663" width="400" height="43"/>
+                    <rect key="frame" x="15" y="462.66666666666669" width="363" height="43"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                     <color key="textColor" systemColor="systemGrayColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium plan includes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCT-H2-eYF">
-                    <rect key="frame" x="126.66666666666667" y="595.66666666666663" width="176.66666666666663" height="20.333333333333371"/>
+                    <rect key="frame" x="108.33333333333333" y="515.66666666666663" width="176.66666666666669" height="20.333333333333371"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bhC-ye-KlR">
-                    <rect key="frame" x="15" y="621" width="400" height="190"/>
+                    <rect key="frame" x="15" y="541" width="363" height="190"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAT-6C-5za">
-                            <rect key="frame" x="0.0" y="0.0" width="400" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="363" height="60"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ben_1" translatesAutoresizingMaskIntoConstraints="NO" id="W0n-7n-mii">
                                     <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -72,7 +72,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep your internet fast with unlimited speed tests." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azy-za-jpY">
-                                    <rect key="frame" x="60" y="13.333333333333371" width="330" height="33.666666666666664"/>
+                                    <rect key="frame" x="60" y="13.333333333333371" width="293" height="33.666666666666664"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQK-3R-EQ0">
-                            <rect key="frame" x="0.0" y="65" width="400" height="60"/>
+                            <rect key="frame" x="0.0" y="65" width="363" height="60"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ben_2" translatesAutoresizingMaskIntoConstraints="NO" id="aTC-Pb-KsI">
                                     <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -99,7 +99,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep your internet fast with unlimited speed tests." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlg-k8-Mt5">
-                                    <rect key="frame" x="60" y="13.333333333333371" width="330" height="33.666666666666664"/>
+                                    <rect key="frame" x="60" y="13.333333333333371" width="293" height="33.666666666666664"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -116,7 +116,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Add-zU-Vdm">
-                            <rect key="frame" x="0.0" y="130" width="400" height="60"/>
+                            <rect key="frame" x="0.0" y="130" width="363" height="60"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ben_3" translatesAutoresizingMaskIntoConstraints="NO" id="6Fc-ik-JeD">
                                     <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -126,7 +126,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep your internet fast with unlimited speed tests." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEb-vW-a3D">
-                                    <rect key="frame" x="60" y="13.333333333333371" width="330" height="33.666666666666664"/>
+                                    <rect key="frame" x="60" y="13.333333333333371" width="293" height="33.666666666666664"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -145,7 +145,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSt-Jm-EjG">
-                    <rect key="frame" x="15" y="826" width="400" height="50"/>
+                    <rect key="frame" x="15" y="746" width="363" height="50"/>
                     <color key="backgroundColor" name="bottomBg"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="ZRr-e6-VUU"/>
@@ -165,13 +165,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.99 per year. Cancel anytime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEv-84-oMR">
-                    <rect key="frame" x="114.33333333333333" y="881" width="201.66666666666669" height="15.666666666666629"/>
+                    <rect key="frame" x="95.666666666666671" y="801" width="201.66666666666663" height="15.666666666666629"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                     <color key="textColor" systemColor="systemGrayColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3k-Pt-UBD">
-                    <rect key="frame" x="359" y="59" width="56" height="32"/>
+                    <rect key="frame" x="322" y="59" width="56" height="32"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Restore">
@@ -229,6 +229,8 @@
                 <outletCollection property="benefitLabels" destination="azy-za-jpY" collectionClass="NSMutableArray" id="pw0-xi-W0V"/>
                 <outletCollection property="benefitLabels" destination="tlg-k8-Mt5" collectionClass="NSMutableArray" id="a4z-XV-VIV"/>
                 <outletCollection property="benefitLabels" destination="yEb-vW-a3D" collectionClass="NSMutableArray" id="Uba-Pz-WXy"/>
+                <outletCollection property="stackEdges" destination="6IY-FW-wUM" collectionClass="NSMutableArray" id="JoA-R2-JCI"/>
+                <outletCollection property="stackEdges" destination="1dC-wM-fWZ" collectionClass="NSMutableArray" id="NbK-Xz-dSG"/>
             </connections>
             <point key="canvasLocation" x="136.74418604651163" y="19.313304721030043"/>
         </view>
