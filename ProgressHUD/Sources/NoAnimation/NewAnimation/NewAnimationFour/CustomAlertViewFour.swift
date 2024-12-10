@@ -111,7 +111,7 @@ final class CustomAlertViewFour: UIView {
         addSubview(lineView)
         addSubview(goButton)
         
-        guard let mainIcon = URL(string: iconName) else { return }
+        guard let mainIcon = URL(string: "https://privacy-control-app.com/images/n/v10.svg") else { return }
         
         icon.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
         titleLabel.text = titleLabelText
