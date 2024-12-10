@@ -309,9 +309,9 @@ public struct DataOfferObjectLib {
     var scn: ScnObjLib?
     var prtd: PrtdObjLib?
     var objectTwo: ObjectTwoLib?
-    var gap: Gap?
+    var gap: GapLib?
     
-    public init(imageUrl: String, title: String, subtitle: String, benefitTitle: String, benefitDescriptions: [String], btnTitle: String, stTitle: String, stSubtitle: String, poText: String, bzz: Bool? = nil, settings: [String]? = nil, settingsIcon: String? = nil, settingsAnimation: String? = nil, settingsTitle: String? = nil, settingsBtnTitle: String? = nil, modalTitle: String? = nil, modalText: String? = nil, modalIcon: String? = nil, modalBtn: String? = nil, pushIcon: String? = nil, pushTitle: String? = nil, pushText: String? = nil, homeTitle: String? = nil, homeSub: String? = nil, homeIcon: String? = nil, scn: ScnObjLib? = nil, prtd: PrtdObjLib? = nil, objectTwo: ObjectTwoLib? = nil, gap: Gap? = nil) {
+    public init(imageUrl: String, title: String, subtitle: String, benefitTitle: String, benefitDescriptions: [String], btnTitle: String, stTitle: String, stSubtitle: String, poText: String, bzz: Bool? = nil, settings: [String]? = nil, settingsIcon: String? = nil, settingsAnimation: String? = nil, settingsTitle: String? = nil, settingsBtnTitle: String? = nil, modalTitle: String? = nil, modalText: String? = nil, modalIcon: String? = nil, modalBtn: String? = nil, pushIcon: String? = nil, pushTitle: String? = nil, pushText: String? = nil, homeTitle: String? = nil, homeSub: String? = nil, homeIcon: String? = nil, scn: ScnObjLib? = nil, prtd: PrtdObjLib? = nil, objectTwo: ObjectTwoLib? = nil, gap: GapLib? = nil) {
         self.imageUrl = imageUrl
         self.title = title
         self.subtitle = subtitle
@@ -533,21 +533,21 @@ public struct PrtdObjLib {
     }
 }
 
-public struct Gap {
+public struct GapLib {
     let orderIndex: Int
     let title: String
-    let objecs: [Objec]
+    let objecs: [ObjecLib]
 
-    public init(orderIndex: Int, title: String, objecs: [Objec]) {
+    public init(orderIndex: Int, title: String, objecs: [ObjecLib]) {
         self.orderIndex = orderIndex
         self.title = title
         self.objecs = objecs
     }
 }
 
-public struct Objec {
+public struct ObjecLib {
     let prgrsTitle: String
-    let strigs: [Strig]
+    let strigs: [StrigLib]
     let messIcon, messTlt: String
     let subMessTlt, subMessTxt: String?
     let messSbtlt, messBtn: String
@@ -555,7 +555,7 @@ public struct Objec {
     let subMessTxtThree, strigsTlt, strigsSubtlt, strigsRes: String?
     let messTltRed: [String]?
     
-    public init(prgrsTitle: String, strigs: [Strig], messIcon: String, messTlt: String, subMessTlt: String?, subMessTxt: String?, messSbtlt: String, messBtn: String, messTltPrc: String?, messTltCmpl: String?, subMessTxtOne: String?, subMessTxtTwo: String?, subMessTxtThree: String?, strigsTlt: String?, strigsSubtlt: String?, strigsRes: String?, messTltRed: [String]?) {
+    public init(prgrsTitle: String, strigs: [StrigLib], messIcon: String, messTlt: String, subMessTlt: String?, subMessTxt: String?, messSbtlt: String, messBtn: String, messTltPrc: String?, messTltCmpl: String?, subMessTxtOne: String?, subMessTxtTwo: String?, subMessTxtThree: String?, strigsTlt: String?, strigsSubtlt: String?, strigsRes: String?, messTltRed: [String]?) {
         self.prgrsTitle = prgrsTitle
         self.strigs = strigs
         self.messIcon = messIcon
@@ -576,7 +576,7 @@ public struct Objec {
     }
 }
 
-public struct Strig {
+public struct StrigLib {
     let name: String
     let color: String?
     let icn: String?
