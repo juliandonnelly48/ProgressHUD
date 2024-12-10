@@ -10,7 +10,7 @@ final class LongBoxView: UIView {
     private let icon: UIImageView = {
         let icon = UIImageView()
         
-        icon.contentMode = .scaleAspectFit
+        icon.contentMode = .scaleToFill
         
         return icon
     }()
