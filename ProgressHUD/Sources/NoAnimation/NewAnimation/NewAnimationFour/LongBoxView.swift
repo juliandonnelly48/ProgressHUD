@@ -100,7 +100,7 @@ final class LongBoxView: UIView {
         subtitleLabel.text = subtitleText
         guard let mainIcon = URL(string: iconName) else { return }
         
-        icon.kf.setImage(with: mainIcon, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
+        icon.kf.setImage(with: mainIcon, placeholder: UIImage())
     }
     
     private func setupLayout() {
