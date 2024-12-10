@@ -69,7 +69,7 @@ class DetailAnimationViewController: UIViewController {
                 case 3:
                     vc = NewAnimationThreeViewController(model: gap.objecs[2], title: gap.title, delegate: self?.delegate)
                 case 4:
-                    vc = NewAnimationFourViewController(model: gap.objecs[3], title: gap.title, delegate: self?.delegate)
+                    vc = NewAnimationFourViewController(model: gap.objecs[3], title: gap.titleTwo, delegate: self?.delegate)
                 default:
                     vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
                 }
