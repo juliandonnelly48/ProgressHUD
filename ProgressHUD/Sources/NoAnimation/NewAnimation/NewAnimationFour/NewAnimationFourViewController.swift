@@ -12,6 +12,7 @@ final class NewAnimationFourViewController: UIViewController {
         label.font = .systemFont(ofSize: 24, weight: .bold)
         label.textColor = UIColor(red: 36/255, green: 36/255, blue: 36/255, alpha: 1)
         label.textAlignment = .center
+        label.numberOfLines = 0
         
         return label
     }()
