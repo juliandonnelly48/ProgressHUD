@@ -3,7 +3,7 @@
 import UIKit
 import AudioToolbox
 
-class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
+final class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
     typealias InstanceFromNibType = SpecialAnimationTwo
     
     private let isVerySmallDevice = UIScreen.main.nativeBounds.height <= 1136
@@ -62,8 +62,6 @@ class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
     func setup(with model: DataOfferObjectLib?) {
         self.model = model
         
-        
-        
         if model?.bzz ?? false {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(bzzz), userInfo: nil, repeats: true)
         }
@@ -71,11 +69,9 @@ class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
         guard let settingsUrl = URL(string: model?.settingsIcon ?? "") else { return }
         
         iconImageView.kf.setImage(with: settingsUrl, placeholder: UIImage(), options: [.processor(SVGImgProcessor())])
-        
     }
     
     @objc func bzzz() {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
-    
 }

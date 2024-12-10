@@ -55,7 +55,29 @@ class DetailAnimationViewController: UIViewController {
         
         detailInformView.continueButtonTapped = { [weak self] in
             self?.delegate?.eventsFunc(event: .specialOffer2ActionButton)
-            self?.delegate?.buttonTapped(isResult: false)
+            
+            if ProgressHUD.shared.isNewAnimationOn {
+                guard let gap = self?.model?.gap else { return }
+                
+                let vc: UIViewController
+                
+                switch gap.orderIndex {
+                case 1:
+                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
+                case 2:
+                    vc = NewAnimationTwoViewController(model: gap.objecs[1], title: gap.title, delegate: self?.delegate)
+                case 3:
+                    vc = NewAnimationThreeViewController(model: gap.objecs[2], title: gap.title, delegate: self?.delegate)
+                case 4:
+                    vc = NewAnimationFourViewController(model: gap.objecs[3], title: gap.title, delegate: self?.delegate)
+                default:
+                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
+                }
+                
+                self?.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self?.delegate?.buttonTapped(isResult: false)
+            }
         }
         
         detailInformView.pushShow = { [weak self] in

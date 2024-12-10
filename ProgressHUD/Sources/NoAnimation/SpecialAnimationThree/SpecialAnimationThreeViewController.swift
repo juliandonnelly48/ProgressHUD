@@ -259,7 +259,28 @@ public class SpecialAnimationThreeViewController: UIViewController {
         }
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
             self?.delegate?.eventsFunc(event: .specialOffer3ActionButton)
-            self?.delegate?.buttonTapped(isResult: false)
+            if ProgressHUD.shared.isNewAnimationOn {
+                guard let gap = self?.model?.gap else { return }
+                
+                let vc: UIViewController
+                
+                switch gap.orderIndex {
+                case 1:
+                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
+                case 2:
+                    vc = NewAnimationTwoViewController(model: gap.objecs[1], title: gap.title, delegate: self?.delegate)
+                case 3:
+                    vc = NewAnimationThreeViewController(model: gap.objecs[2], title: gap.title, delegate: self?.delegate)
+                case 4:
+                    vc = NewAnimationFourViewController(model: gap.objecs[3], title: gap.title, delegate: self?.delegate)
+                default:
+                    vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
+                }
+                
+                self?.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self?.delegate?.buttonTapped(isResult: false)
+            }
         }
         
         alert.addAction(cancelAction)
