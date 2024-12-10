@@ -11,6 +11,7 @@ public class SpecialAnimationViewController: UIViewController {
     public var price: String
     var dismissed: (() -> ())?
     public var model: DataOfferObjectLib?
+    private var newNC: UINavigationController?
     weak var delegate: SpecialAnimationDelegate?
     
     public init(_ model: DataOfferObjectLib? = nil, price: String ,delegate: SpecialAnimationDelegate) {
@@ -99,11 +100,11 @@ public class SpecialAnimationViewController: UIViewController {
                     vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
                 }
                 
-                let nc = UINavigationController(rootViewController: vc)
+                self?.newNC = UINavigationController(rootViewController: vc)
                 
-                nc.modalPresentationStyle = .fullScreen
+                self?.newNC?.modalPresentationStyle = .fullScreen
                 
-                self?.present(nc, animated: true)
+                self?.present(self?.newNC ?? UINavigationController(), animated: true)
             } else {
                 self?.delegate?.buttonTapped(isResult: false)
             }
@@ -120,13 +121,19 @@ public class SpecialAnimationViewController: UIViewController {
     
     public func goToResult() {
         delegate?.eventsFunc(event: .specialOffer1Hide)
-        DispatchQueue.main.async {
-            let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
-            let nc = UINavigationController(rootViewController: vc)
-            
-            nc.modalPresentationStyle = .fullScreen
-            
-            self.present(nc, animated: true)
+        let vc = ReslutAnimationViewContoller(self.model, isPaid: true, delegate: nil)
+        
+        if ProgressHUD.shared.isNewAnimationOn {
+            newNC?.pushViewController(vc, animated: true)
+        } else {
+            DispatchQueue.main.async {
+                
+                let nc = UINavigationController(rootViewController: vc)
+                
+                nc.modalPresentationStyle = .fullScreen
+                
+                self.present(nc, animated: true)
+            }
         }
     }
 }
