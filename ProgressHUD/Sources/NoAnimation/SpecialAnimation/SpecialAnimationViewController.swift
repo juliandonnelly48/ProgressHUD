@@ -99,7 +99,11 @@ public class SpecialAnimationViewController: UIViewController {
                     vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
                 }
                 
-                self?.navigationController?.pushViewController(vc, animated: true)
+                let nc = UINavigationController(rootViewController: vc)
+                
+                nc.modalPresentationStyle = .fullScreen
+                
+                self?.present(nc, animated: true)
             } else {
                 self?.delegate?.buttonTapped(isResult: false)
             }
