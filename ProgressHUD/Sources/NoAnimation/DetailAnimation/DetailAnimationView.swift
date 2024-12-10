@@ -536,11 +536,13 @@ public struct PrtdObjLib {
 public struct GapLib {
     let orderIndex: Int
     let title: String
+    let titleTwo: String
     let objecs: [ObjecLib]
 
-    public init(orderIndex: Int, title: String, objecs: [ObjecLib]) {
+    public init(orderIndex: Int, title: String, titleTwo: String, objecs: [ObjecLib]) {
         self.orderIndex = orderIndex
         self.title = title
+        self.titleTwo = titleTwo
         self.objecs = objecs
     }
 }
