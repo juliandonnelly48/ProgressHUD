@@ -31,8 +31,8 @@ public struct AuthorizationOfferModel: Codable {
     var benefitTitle: String
     var benefitDescriptions: [String]
     var btnTitle: String
-    var stTitle: String
-    var stSubtitle: String
+    public var stTitle: String
+    public var stSubtitle: String
     var poText: String
     var bzz: Bool?
     var settings: [String]?
