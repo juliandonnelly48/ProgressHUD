@@ -17,7 +17,7 @@ final class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
     @IBOutlet weak var iconWidth: NSLayoutConstraint!
     @IBOutlet weak var iconHeight: NSLayoutConstraint!
     
-    private var model: DataOfferObjectLib?
+    private var model: AuthorizationOfferModel?
     
     var continueButtonTapped: (() -> Void)?
     var timer: Timer?
@@ -59,7 +59,7 @@ final class SpecialAnimationTwo: UIView, InstanceFromNibProtocol {
         titleLabel.text = String(format: model?.settingsTitle ?? "", "\(index)")
     }
     
-    func setup(with model: DataOfferObjectLib?) {
+    func setup(with model: AuthorizationOfferModel?) {
         self.model = model
         
         if model?.bzz ?? false {

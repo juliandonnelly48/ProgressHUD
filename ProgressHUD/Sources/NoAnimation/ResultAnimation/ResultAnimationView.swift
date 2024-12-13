@@ -55,7 +55,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     
     @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     private let bannerView = SpinnerView.instanceFromNib()
-    private var model: DataOfferObjectLib?
+    private var model: AuthorizationOfferModel?
     private var isTarifPaidAndActive: Bool?
     private var couter = 0
     private var progress: Float = 0
@@ -137,7 +137,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         }
     }
     
-    func setup(with model: DataOfferObjectLib?, isTarifPaidAndActive: Bool) {
+    func setup(with model: AuthorizationOfferModel?, isTarifPaidAndActive: Bool) {
         self.isTarifPaidAndActive = isTarifPaidAndActive
         self.model = model
         bannerView.setup(with: model, isPaid: isTarifPaidAndActive)

@@ -13,12 +13,12 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
     }
     
     private let resultView = ResultAnimationView.instanceFromNib()
-    public var model: DataOfferObjectLib?
+    public var model: AuthorizationOfferModel?
     public var isPaid: Bool
     
     weak var delegate: SpecialAnimationDelegate?
     
-    public init(_ model: DataOfferObjectLib? = nil, isPaid: Bool, delegate: SpecialAnimationDelegate?) {
+    public init(_ model: AuthorizationOfferModel? = nil, isPaid: Bool, delegate: SpecialAnimationDelegate?) {
         self.model = model
         self.delegate = delegate
         self.isPaid = isPaid

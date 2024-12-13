@@ -18,10 +18,10 @@ public class SpecialAnimationFourViewController: UIViewController {
     private let bottomView = BottomAnimationView()
     private var data: [(String, String)] = []
     
-    public var model: DataOfferObjectLib?
+    public var model: AuthorizationOfferModel?
     weak var delegate: SpecialAnimationDelegate?
     
-    public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
+    public init(_ model: AuthorizationOfferModel? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         

@@ -10,11 +10,11 @@ public class SpecialAnimationViewController: UIViewController {
     
     public var price: String
     var dismissed: (() -> ())?
-    public var model: DataOfferObjectLib?
+    public var model: AuthorizationOfferModel?
     private var newNC: UINavigationController?
     weak var delegate: SpecialAnimationDelegate?
     
-    public init(_ model: DataOfferObjectLib? = nil, price: String ,delegate: SpecialAnimationDelegate) {
+    public init(_ model: AuthorizationOfferModel? = nil, price: String ,delegate: SpecialAnimationDelegate) {
         self.delegate = delegate
         self.price = price
         self.model = model

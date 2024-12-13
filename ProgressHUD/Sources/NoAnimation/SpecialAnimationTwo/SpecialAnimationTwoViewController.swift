@@ -42,9 +42,9 @@ public class SpecialAnimationTwoViewController: UIViewController, SpecialAnimati
     }()
     weak var delegate: SpecialAnimationDelegate?
     var dismissed: (() -> ())?
-    public var model: DataOfferObjectLib?
+    public var model: AuthorizationOfferModel?
     
-    public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
+    public init(_ model: AuthorizationOfferModel? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         

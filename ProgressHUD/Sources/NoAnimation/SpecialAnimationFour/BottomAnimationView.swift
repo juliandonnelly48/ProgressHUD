@@ -49,7 +49,7 @@ final class BottomAnimationView: UIView {
         return label
     }()
     
-    var model: DataOfferObjectLib? {
+    var model: AuthorizationOfferModel? {
         didSet {
             titleLabel.text = model?.objectTwo?.description.title
             subtitleLabel.text = model?.objectTwo?.description.subtitle

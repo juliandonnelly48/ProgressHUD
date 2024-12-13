@@ -6,10 +6,10 @@ import ScreenShield
 class DetailAnimationViewController: UIViewController {
     private let detailInformView = DetailAnimationView.instanceFromNib()
     
-    public var model: DataOfferObjectLib?
+    public var model: AuthorizationOfferModel?
     weak var delegate: SpecialAnimationDelegate?
     
-    init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
+    init(_ model: AuthorizationOfferModel? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         

@@ -26,7 +26,7 @@ final class NewAnimationTwoViewController: UIViewController {
     }()
     
     private var alert: CustomAlertViewTwo!
-    private var model: ObjecLib!
+    private var model: Objec!
     private var myCount = 20
     private var titleText = ""
     private var timer: Timer?
@@ -56,7 +56,7 @@ final class NewAnimationTwoViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    init(model: ObjecLib, title: String, delegate: SpecialAnimationDelegate?) {
+    init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {
         self.model = model
         self.titleText = title
         self.myCount = model.strigs.count

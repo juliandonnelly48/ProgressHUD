@@ -71,7 +71,7 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
         }
     }
     
-    func setup(with model: DataOfferObjectLib?, isPaid: Bool) {
+    func setup(with model: AuthorizationOfferModel?, isPaid: Bool) {
         self.isPaid = isPaid
         titleLabel.text = model?.scn?.banner_title
         subtitleLabel.text = model?.scn?.banner_subtitle

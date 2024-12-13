@@ -72,10 +72,10 @@ public class SpecialAnimationThreeViewController: UIViewController {
     
     private let containerView = UIView()
     
-    public var model: DataOfferObjectLib?
+    public var model: AuthorizationOfferModel?
     weak var delegate: SpecialAnimationDelegate?
     
-    public init(_ model: DataOfferObjectLib? = nil, delegate: SpecialAnimationDelegate) {
+    public init(_ model: AuthorizationOfferModel? = nil, delegate: SpecialAnimationDelegate) {
         self.model = model
         self.delegate = delegate
         
