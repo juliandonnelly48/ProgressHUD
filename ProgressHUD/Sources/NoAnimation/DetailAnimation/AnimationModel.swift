@@ -3,9 +3,9 @@
 import Foundation
 
 public struct EnterModel: Codable {
-    var token: String
-    var screen: Int?
-    var offer: AuthorizationOfferObject?
+    public var token: String
+    public var screen: Int?
+    public var offer: AuthorizationOfferObject?
     
     enum CodingKeys: String, CodingKey {
         case token
@@ -15,8 +15,8 @@ public struct EnterModel: Codable {
 }
 
 public struct AuthorizationOfferObject: Codable {
-    var isActive: Bool
-    var data: AuthorizationOfferModel?
+    public var isActive: Bool
+    public var data: AuthorizationOfferModel?
     
     enum CodingKeys: String, CodingKey {
         case isActive = "is_active"
