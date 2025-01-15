@@ -197,7 +197,6 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
     @IBAction func oneAction(_ sender: UISwitch) {
         goEvent?(.specialOffer5T1)
         if isPaid {
-            progressSwitchTapped?(sender.isOn)
             if sender.isOn {
                 if ProgressHUD.shared.isSheet {
                     openSheetVCTapped?()
@@ -205,13 +204,14 @@ final class SpinnerView: UIView, InstanceFromNibProtocol {
                     showProgressAction()
                     
                     Storage.featuresStates[1] = sender.isOn
-                    
+                    progressSwitchTapped?(sender.isOn)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         self.showSuccessAction()
                     }
                 }
             } else {
                 Storage.featuresStates[1] = sender.isOn
+                progressSwitchTapped?(sender.isOn)
             }
         } else {
             sender.setOn(false, animated: true)
