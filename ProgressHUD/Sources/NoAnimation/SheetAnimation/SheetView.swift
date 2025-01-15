@@ -257,8 +257,8 @@ final class SheetView: UIView, InstanceFromNibProtocol {
             eventAction?()
             change(.active)
         } else {
-            dismissAction?()
             Storage.featuresStates[1] = true
+            dismissAction?()
         }
     }
 }
