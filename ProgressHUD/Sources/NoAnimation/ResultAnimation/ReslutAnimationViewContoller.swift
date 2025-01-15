@@ -141,7 +141,9 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         resultView.openSheetVCTapped = { [weak self] in
             guard let self else { return }
             
-            let vc = SheetViewController(model?.sheet, delegate: self.delegate)
+            let vc = SheetViewController(model?.sheet, delegate: self.delegate) {
+                self.resultView.setup(with: self.model, isTarifPaidAndActive: self.isPaid)
+            }
             
             vc.modalPresentationStyle = .overCurrentContext
             self.navigationController?.present(vc, animated: false)
@@ -150,7 +152,6 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
         resultView.sendEvent = { [weak self] event in
             self?.delegate?.eventsFunc(event: event)
         }
-        
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -167,7 +168,7 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
     }
 }
 
-class SecureField: UITextField {
+final class SecureField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
@@ -185,6 +186,7 @@ class SecureField: UITextField {
         }).first
         secureView?.translatesAutoresizingMaskIntoConstraints = false
         secureView?.isUserInteractionEnabled = true
+        
         return secureView
     }
     

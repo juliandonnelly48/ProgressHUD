@@ -6,15 +6,17 @@ final class SheetViewController: UIViewController {
     public var model: SheetObject?
     
     weak var delegate: SpecialAnimationDelegate?
+    private let completion: () -> Void
     
     override func loadView() {
         sheetAlert.model = self.model
         view = sheetAlert
     }
     
-    public init(_ model: SheetObject? = nil, delegate: SpecialAnimationDelegate?) {
+    public init(_ model: SheetObject? = nil, delegate: SpecialAnimationDelegate?, completion: @escaping () -> Void) {
         self.model = model
         self.delegate = delegate
+        self.completion = completion
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,6 +29,7 @@ final class SheetViewController: UIViewController {
         super.viewDidLoad()
         
         sheetAlert.dismissAction = {
+            self.completion()
             self.dismiss(animated: false)
         }
         
