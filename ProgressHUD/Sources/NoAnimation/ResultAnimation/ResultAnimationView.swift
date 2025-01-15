@@ -65,6 +65,7 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
     var timerBzz: Timer?
     
     var tariffButtonTapped: (() -> Void)?
+    var openSheetVCTapped: (() -> Void)?
     var sendEvent: ((EventsName) -> Void)?
     
     override func awakeFromNib() {
@@ -134,6 +135,10 @@ class ResultAnimationView: UIView, InstanceFromNibProtocol {
         
         bannerView.goEvent = { [weak self] event in
             self?.sendEvent?(event)
+        }
+        
+        bannerView.openSheetVCTapped = { [weak self] in
+            self?.openSheetVCTapped?()
         }
     }
     

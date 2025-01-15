@@ -39,4 +39,19 @@ public enum EventsName: String {
     case specialOffer5T5 = "special_offer5_t5"
     case specialOffer5T5Settings = "special_offer5_t5_settings"
     case specialOffer5Error = "special_offer5_error"
+    
+    case scan1Show = "scan1_show"
+    case scan1Action = "scan1_action_button"
+    case scan1Hide = "scan1_hide"
+    case scan2Show = "scan2_show"
+    case scan2Action = "scan2_action_button"
+    case scan2Hide = "scan2_hide"
+    case scan3Show = "scan3_show"
+    case scan3Action = "scan3_action_button"
+    case scan3Hide = "scan3_hide"
+    case scan4Show = "scan4_show"
+    case scan4Action = "scan4_action_button"
+    case scan4Hide = "scan4_hide"
+    
+    case antivirusActive = "antivirus_active"
 }

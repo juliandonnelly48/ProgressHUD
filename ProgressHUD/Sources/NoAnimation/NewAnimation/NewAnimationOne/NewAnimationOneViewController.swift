@@ -44,14 +44,23 @@ final class NewAnimationOneViewController: UIViewController {
         setupUI()
         startProgress()
         alert.goButtonCompletion = { [weak self] in
+            self?.delegate?.eventsFunc(event: .scan1Action)
             self?.delegate?.buttonTapped(isResult: false)
         }
+        
+        self.delegate?.eventsFunc(event: .scan1Show)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.delegate?.eventsFunc(event: .scan1Hide)
     }
     
     init(model: Objec, title: String, delegate: SpecialAnimationDelegate?) {

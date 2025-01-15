@@ -68,6 +68,8 @@ public class ProgressHUD: UIView {
 
     public var isNewAnimationOn = true
     public var isShow = true
+    public var isSheet = true
+
 	public static let shared = ProgressHUD()
 
 	convenience private init() {

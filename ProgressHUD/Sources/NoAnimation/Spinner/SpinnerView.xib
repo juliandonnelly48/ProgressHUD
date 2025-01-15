@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -142,7 +141,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="0RK-Hh-4go" firstAttribute="leading" secondItem="Ktn-4K-Cbc" secondAttribute="leading" constant="10" id="EZi-Nz-2OS"/>
                                                 <constraint firstItem="ezy-qT-301" firstAttribute="leading" secondItem="0RK-Hh-4go" secondAttribute="trailing" constant="5" id="FhD-Qm-UoK"/>
@@ -216,7 +215,7 @@
                                                     </connections>
                                                 </switch>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="YEx-kz-wUj" firstAttribute="centerY" secondItem="2LN-yz-4HD" secondAttribute="centerY" id="1e3-qB-vZa"/>
                                                 <constraint firstAttribute="bottom" secondItem="hxJ-iL-yUo" secondAttribute="bottom" constant="10" id="3Im-Gh-xjB"/>
@@ -309,7 +308,7 @@
                                                     </connections>
                                                 </switch>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="aqc-AS-YAj" firstAttribute="centerY" secondItem="IJM-cA-yFc" secondAttribute="centerY" id="3yE-T1-neq"/>
                                                 <constraint firstItem="aqc-AS-YAj" firstAttribute="leading" secondItem="p6A-nk-waP" secondAttribute="trailing" constant="5" id="5LE-VY-qFe"/>
@@ -381,7 +380,7 @@
                                                     </connections>
                                                 </switch>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="nfi-tH-csV" firstAttribute="leading" secondItem="DXL-lv-d0G" secondAttribute="leading" constant="10" id="0OS-ai-adL"/>
                                                 <constraint firstItem="nfi-tH-csV" firstAttribute="top" secondItem="DXL-lv-d0G" secondAttribute="top" constant="11" id="4K1-7n-Ism"/>
@@ -471,7 +470,7 @@
                                                     </connections>
                                                 </switch>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="flq-zM-dQP" firstAttribute="leading" secondItem="7ho-ea-Td7" secondAttribute="leading" constant="10" id="8h7-T6-jCn"/>
                                                 <constraint firstItem="flq-zM-dQP" firstAttribute="top" secondItem="7ho-ea-Td7" secondAttribute="top" constant="11" id="Gj2-0C-gfQ"/>
@@ -543,7 +542,7 @@
                                                     </connections>
                                                 </switch>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="LwK-Xf-GlN" secondAttribute="trailing" constant="10" id="0Nv-1S-5U8"/>
                                                 <constraint firstItem="nbb-hc-99N" firstAttribute="leading" secondItem="ZRp-T9-yL5" secondAttribute="leading" constant="10" id="66d-mG-rHI"/>
@@ -639,8 +638,5 @@
         <image name="allContacts_icon" width="24" height="24"/>
         <image name="good" width="12" height="13"/>
         <image name="lock" width="10" height="12"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

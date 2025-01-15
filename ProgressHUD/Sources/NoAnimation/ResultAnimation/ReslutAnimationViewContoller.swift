@@ -42,7 +42,7 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
                 containerView.backgroundColor = .white
                 containerView.addSubview(secureView)
                 secureView.addSubview(resultView)
-                self.view.addSubview(secureView)
+                // self.view.addSubview(secureView)
                 secureView.snp.makeConstraints({$0.edges.equalToSuperview()})
                 self.view.addSubview(containerView)
             
@@ -137,6 +137,15 @@ public class ReslutAnimationViewContoller: UIViewController, SpecialAnimationDel
             vc.modalPresentationStyle = .fullScreen
             
             self.navigationController?.present(vc, animated: true)
+        }
+        
+        resultView.openSheetVCTapped = { [weak self] in
+            guard let self else { return }
+            
+            let vc = SheetViewController(model?.sheet, delegate: self.delegate)
+            
+            vc.modalPresentationStyle = .overCurrentContext
+            self.navigationController?.present(vc, animated: false)
         }
         
         resultView.sendEvent = { [weak self] event in
