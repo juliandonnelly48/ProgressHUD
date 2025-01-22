@@ -89,7 +89,7 @@ public class ProgressHUD: UIView {
 // MARK: - Progress
 extension ProgressHUD {
     
-    func openNewAnimation(gap: Gap?, delegate: SpecialAnimationDelegate?) -> UIViewController? {
+    public func openNewAnimation(gap: Gap?, delegate: SpecialAnimationDelegate?) -> UIViewController? {
         guard let gap else { return nil }
         
         let vc: UIViewController
