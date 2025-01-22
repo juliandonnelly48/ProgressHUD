@@ -266,7 +266,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
                 
                 switch gap.orderIndex {
                 case 0:
-                    return
+                    self?.delegate?.buttonTapped(isResult: false)
                 case 1:
                     vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
                 case 2:
