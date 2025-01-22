@@ -57,7 +57,7 @@ class DetailAnimationViewController: UIViewController {
             self?.delegate?.eventsFunc(event: .specialOffer2ActionButton)
             
             if ProgressHUD.shared.isNewAnimationOn {
-                guard let gap = self?.model?.gap else { return SpecialAnimationThreeViewController}
+                guard let gap = self?.model?.gap else { return }
                 
                 let vc: UIViewController
                 
