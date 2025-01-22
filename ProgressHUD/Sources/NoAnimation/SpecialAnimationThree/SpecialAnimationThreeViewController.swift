@@ -220,7 +220,7 @@ public class SpecialAnimationThreeViewController: UIViewController {
         }
         
         lowImageIconView.snp.makeConstraints { make in
-            make.width.height.equalTo(20)
+            make.width.equalTo(20)
         }
         
         hStack.snp.makeConstraints { make in

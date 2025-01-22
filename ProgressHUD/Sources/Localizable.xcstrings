@@ -21,6 +21,12 @@
             "state" : "translated",
             "value" : "תועבר להגדרות"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定画面にリダイレクトされます"
+          }
         }
       }
     },
@@ -43,6 +49,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "עַכשָׁיו"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今すぐ"
           }
         }
       }
@@ -67,6 +79,12 @@
             "state" : "translated",
             "value" : "פָּעִיל"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクティブ"
+          }
         }
       }
     },
@@ -89,6 +107,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "התחל ניסיון חינם ל-3 ימים"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3日間の無料トライアルを開始"
           }
         }
       }
@@ -113,6 +137,12 @@
             "state" : "translated",
             "value" : "ניתן לבטל בכל עת"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "いつでもキャンセル可能"
+          }
         }
       }
     },
@@ -135,6 +165,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "נָכֶה"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効"
           }
         }
       }
@@ -159,6 +195,12 @@
             "state" : "translated",
             "value" : "כבוי"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オフ"
+          }
         }
       }
     },
@@ -181,6 +223,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "פועל"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オン"
           }
         }
       }
@@ -205,6 +253,12 @@
             "state" : "translated",
             "value" : "חינם למשך 3 ימים, ולאחר מכן %@/שבוע"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最初の3日間は無料、その後は%@/週"
+          }
         }
       }
     },
@@ -228,6 +282,12 @@
             "state" : "translated",
             "value" : "שדרג עכשיו לגלישה מאובטחת ללא דליפות נתונים."
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今すぐアップグレードして、データ漏洩のない安全な閲覧を実現しましょう。"
+          }
         }
       }
     },
@@ -250,6 +310,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "הצעה בלעדית!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "限定オファー！"
           }
         }
       }
