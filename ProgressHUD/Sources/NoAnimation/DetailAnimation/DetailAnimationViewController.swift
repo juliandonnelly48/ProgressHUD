@@ -64,6 +64,7 @@ class DetailAnimationViewController: UIViewController {
                 switch gap.orderIndex {
                 case 0:
                     self?.delegate?.buttonTapped(isResult: false)
+                    return
                 case 1:
                     vc = NewAnimationOneViewController(model: gap.objecs[0], title: gap.title, delegate: self?.delegate)
                 case 2:
