@@ -5,11 +5,12 @@ import Foundation
 public struct EnterModel: Codable {
     public var token: String
     public var screen: Int?
+    public var screen2: Int?
     public var offer: AuthorizationOfferObject?
     
     enum CodingKeys: String, CodingKey {
         case token
-        case screen
+        case screen, screen2
         case offer = "specialize"
     }
 }
