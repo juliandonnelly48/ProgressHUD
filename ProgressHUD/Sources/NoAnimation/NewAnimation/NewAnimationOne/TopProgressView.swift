@@ -3,7 +3,7 @@ import UIKit
 
 final class TopProgressView: UIView {
     
-    private let progressView: UIProgressView = {
+    private lazy var progressView: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .default)
         
         progressView.progress = 0.0
@@ -11,7 +11,7 @@ final class TopProgressView: UIView {
         progressView.progressTintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         progressView.layer.cornerRadius = 9
         progressView.clipsToBounds = true
-        progressView.layer.sublayers![1].cornerRadius = UIDevice.current.userInterfaceIdiom == .pad ? 13.5 : 9
+        progressView.layer.sublayers?[1].cornerRadius = UIDevice.current.userInterfaceIdiom == .pad ? 13.5 : 9
         progressView.subviews[1].clipsToBounds = true
         
         return progressView
