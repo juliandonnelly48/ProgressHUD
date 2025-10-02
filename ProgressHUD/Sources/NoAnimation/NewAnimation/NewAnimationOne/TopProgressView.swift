@@ -11,8 +11,8 @@ final class TopProgressView: UIView {
         progressView.progressTintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         progressView.layer.cornerRadius = 9
         progressView.clipsToBounds = true
-        progressView.layer.sublayers?[1].cornerRadius = UIDevice.current.userInterfaceIdiom == .pad ? 13.5 : 9
-        progressView.subviews[1].clipsToBounds = true
+        progressView.layer.sublayers?.last?.cornerRadius = UIDevice.current.userInterfaceIdiom == .pad ? 13.5 : 9
+        progressView.subviews.last?.clipsToBounds = true
         
         return progressView
     }()
